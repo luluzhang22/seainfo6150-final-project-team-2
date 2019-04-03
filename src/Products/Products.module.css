@@ -17,3 +17,10 @@
   text-decoration: none;
   color: black;
 }
+.strike_price {
+  text-decoration: line-through;
+}
+
+.final_price {
+  font-weight: bold;
+}

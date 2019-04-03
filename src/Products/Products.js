@@ -24,6 +24,7 @@ const Products = ({ categories, products }) => {
           <div >
               &#10095;{product.title}
           </div>
+          {price}
               <button>View Detail</button>
           </Link>
       </li>
