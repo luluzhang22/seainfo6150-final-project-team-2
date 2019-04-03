@@ -18,19 +18,14 @@ const Products = ({ categories, products }) => {
                 </div>
     }
     return (
-      <li className = {styles.product_card} key={product.id}>
-          <img className = {styles.product_img} src={category.img.sm} />
-          <Link className = {styles.product_title} to={`/products/${product.categoryId}/${product.id}`}>
-            {product.title}
+      <li key={`${product.id}`} className={styles.Product}>
+          <Link to={`/products/${category.id}/${product.id}`} class={styles.ProductLink}>
+              <img src={category.img.sm} alt='productImage'/>
+          <div >
+              &#10095;{product.title}
+          </div>
+              <button>View Detail</button>
           </Link>
-          {price}
-          <button>
-          <Link className={styles.detail_button} to={`/products/${product.categoryId}/${product.id}`}>
-            Detail
-          </Link>
-          </button>
-          <button className={styles.add_to_cart_button}>Add to Cart</button>
-
       </li>
     );
   })
