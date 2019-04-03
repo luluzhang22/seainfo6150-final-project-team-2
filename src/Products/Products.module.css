@@ -1,0 +1,27 @@
+.Product{
+  text-align: center;
+    width: 80%;
+    margin-left: 2rem;
+    margin-bottom: 30px;
+}
+.Product img{
+    width: 90%;
+}
+.Product button{
+    margin-top: 1rem;
+    background: #222222;
+    padding: 6px 18px;
+    color: white;
+}
+.ProductLink {
+  text-decoration: none;
+  color: black;
+}
+.strike_price {
+  text-decoration: line-through;
+  color: #C7384E;
+}
+
+.final_price {
+  font-weight: bold;
+}
