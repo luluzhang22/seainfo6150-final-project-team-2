@@ -39,7 +39,7 @@ class Home extends React.Component {
 
                 <div className={this.state.activedSlide === 2 ? styles.active : styles.slide}>
                     <img src="/assets/img/product/jeep-lg.jpg" alt='slide2'/>
-                    <div className={styles.advertisement}>
+                    <div className={styles.advertisement + " " + styles.advertisement2}>
                         <div className={styles.adTitle}>
                             All you want is a
                         </div>
@@ -47,14 +47,14 @@ class Home extends React.Component {
                             JEEP
                         </div>
                         <Link to='/products/jeep/1c2d9303a50f'>
-                            <button className={styles.adButton}>Shop JEEP Now</button>
+                            <button className={styles.adButton}>Shop Now</button>
                         </Link>
                     </div>
                 </div>
 
                 <div className={this.state.activedSlide === 3 ? styles.active : styles.slide}>
                     <img src="/assets/img/product/sportsCar-lg.jpg" alt='slide3'/>
-                    <div className={styles.advertisement}>
+                    <div className={styles.advertisement + " " + styles.advertisement3}>
                         <div className={styles.adTitle}>
                             Need more information?
                         </div>
