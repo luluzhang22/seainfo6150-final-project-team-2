@@ -1,0 +1,40 @@
+.product_card {
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.product_img {
+  height: 40%;
+  width: 100%;
+}
+
+.product_title {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.strike_price {
+  text-decoration: line-through;
+}
+
+.final_price {
+  font-weight: bold;
+}
+
+.add_to_cart_button {
+  float: right;
+}
+
+button {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #FFF;
+
+}
+
+.detail_button {
+  text-decoration: none;
+  color: #FFF;
+}
