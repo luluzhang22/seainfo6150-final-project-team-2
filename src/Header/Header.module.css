@@ -1,0 +1,56 @@
+.header{
+    background-color: #222222;
+    height: 9rem;
+    line-height: 9rem;
+    display: flex;
+    padding-left: 3rem;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
+}
+.navbar{
+    display: flex;
+    width: 70%;
+}
+.categoryNav{
+    width: 45%;
+}
+.title{
+    font-size: 3rem;
+    color: white;
+}
+.title > img{
+    width: 2.5rem;
+}
+.categoryList{
+    width: 15%;
+    position: absolute;
+    background-color: #f8f7f8;
+    display: none;
+    line-height: 2rem;
+}
+.categoryNav:hover .categoryList{
+    display: block;
+}
+.pagesNav{
+    font-size: 1.8rem;
+    width: 55%;
+    color: white;
+}
+.pagesNav > a{
+    text-decoration: none;
+    margin-right: 5%;
+    color: white;
+}
+.search{
+    width: 10%;
+}
+.search > input{
+    width: 90%;
+    padding: 8px 10px;
+    border: white;
+    border-radius: 0.7rem;
+}
+.help{
+    width: 20%;
+    color: white;
+}

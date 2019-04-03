@@ -1,0 +1,24 @@
+.viewedProductsTitle{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.viewedProducts{
+    display: flex;
+    padding: 0 2rem;
+    text-align: center;
+}
+.viewedPro{
+    width: 18%;
+    margin-left: 2rem;
+}
+.viewedPro img{
+    width: 90%;
+}
+.viewedPro button{
+    margin-top: 1rem;
+    background: #222222;
+    padding: 6px 18px;
+    color: white;
+}

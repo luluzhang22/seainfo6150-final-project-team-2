@@ -1,0 +1,23 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+ul {
+list-style-type: none;
+}
+
+.products_header {
+  margin: 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+button {
+  background: #222222;
+  padding: 6px 18px;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}

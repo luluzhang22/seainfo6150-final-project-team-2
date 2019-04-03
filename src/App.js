@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 
 import {
@@ -12,11 +12,12 @@ import {
 
 
 // components
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import Home from './Home/Home';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import AllProducts from './AllProducts/AllProducts';
-import Categories from './Categories/Categories';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
 import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
@@ -30,13 +31,9 @@ import NotFound from './NotFound/NotFound';
 let App = (props) => (
   <Router>
     <div className={styles.container}>
-      {/* start example of link to route */}
-      <Link to='/'>Home</Link>
-      {/* end example of link to route */}
-
-      {/* start list of product category links */}
-      <Categories categories={Object.values(props.categories)} />
-      {/* end list of product category links */}
+      {/* start header */}
+      <Header categories={props.categories}/>
+      {/* end header */}
 
 
       {/* start 5 most recently viewed products */}
@@ -133,6 +130,8 @@ let App = (props) => (
           />
         </Switch>
       </main>
+
+        <Footer/>
     </div>
   </Router>
 );
