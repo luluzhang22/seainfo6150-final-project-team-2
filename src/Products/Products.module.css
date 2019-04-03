@@ -19,6 +19,7 @@
 }
 .strike_price {
   text-decoration: line-through;
+  color: #C7384E;
 }
 
 .final_price {
