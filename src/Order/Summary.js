@@ -48,17 +48,18 @@ class Summary extends Component {
 
         {/* This will iterate through all the user info so you can see what the user entered. */}
         <ul>
-        {
-          Object.keys(userInfo).map((info) => (
-            <li key={info}>{info}: {userInfo[info]}</li>
-          ))
-        }
+            {
+                userInfo?
+                    Object.keys(userInfo).map((info) => (
+                        <li key={info}>{info}: {userInfo[info]}</li>
+                    )) : ""
+            }
         </ul>
 
         <TotalPrice
           options={options}
-          product={products[selectedProductId]}
           selectedOptions={selectedOptions}
+          product={products[selectedProductId]}
         />
 
         <fieldset>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
+import OrderTabs from "./OrderTabs";
+import styles from "./Order.module.css";
 
 class OrderStep1 extends Component {
   constructor(props) {
@@ -17,21 +19,29 @@ class OrderStep1 extends Component {
   }
 
   render() {
-    const {
-      options,
-      selectedProductId,
-      setProductOption
-    } = this.props;
+      const {
+          options,
+          selectedProductId,
+          selectedOptions,
+          setProductOption,
+          selectedProductImg
+      } = this.props;
 
-    return this.state.submittedSuccessfully
-      ? (<Redirect to="/order/2" />)
-      : (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <fieldset>
-          <input type="submit" value="Go to step 2" />
-        </fieldset>
-      </form>
-    )
+      const product = this.props.products[selectedProductId];
+      return this.state.submittedSuccessfully
+          ? (<Redirect to="/order/2"/>)
+          : (
+              <div>
+                  <OrderTabs cur="Car" selectedOptions={selectedOptions} product={product}
+                             productImg={selectedProductImg}/>
+                  <form onSubmit={this.handleSubmit.bind(this)}>
+                      {options.numExhausts.name}: <input onChange={setProductOption.bind(null, 'numExhausts')}/>
+                      <div className={styles.orderFooter}>
+                          <input type="submit" value="Next"/>
+                      </div>
+                  </form>
+              </div>
+          )
   }
 }
 
