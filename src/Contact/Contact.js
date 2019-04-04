@@ -1,20 +1,32 @@
 import React from 'react';
+import styles from './Contact.module.css';
 
 const Contact = () => (
   <html>
-  <h1>Contact US</h1>
+  <body>
+  <h1 className={styles.products_header}>Contact US</h1>
   <div>
-    <label>First Name</label>
-    <input type="text"id="fname" name="firstname" placeholder="Your first name.."/>
-    <label>Last Name</label>
-    <input type="text"id="lname" name="lastname" placeholder="Your last name.."/>
-    <label>Email</label>
-    <input type="text"id="email" name="email" placeholder="Your email address.."/>
-    <label>Subject</label>
-    <input type="text"id="subj" name="subject" placeholder="Your subject.."/>
-    <textarea id="subject"name="subject"placeholder="Write something.."></textarea>
-    <input type="submit"value="Submit"/>
+    <article className = {styles.physical_Location}>
+    <p>Location</p>
+    <p>Time</p>
+    <p>Map</p>
+    </article>
   </div>
+  <div>
+  <form className={styles.form}>
+    Name:<br/>
+    <input type="text" name="Name" value="Your Fullname"/><br/>
+    E-mail Address:<br/>
+    <input type="text" name="email" value="E-mail Address"/><br/>
+    Subject:<br/>
+    <input type="text" name="subject" value="subject"/><br/>
+    Message:<br/>
+    <textarea>Some text...</textarea>
+    <br/>
+  <button type="submit" name="submit" value="Submit">Submit</button>
+  </form>
+  </div>
+  </body>
   </html>
   
 );
