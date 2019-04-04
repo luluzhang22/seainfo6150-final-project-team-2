@@ -1,24 +1,39 @@
+.viewedContainer{
+    background-color: #fafafa;
+    min-width: 500px;
+    padding-top: 2rem;
+}
 .viewedProductsTitle{
     text-align: center;
-    margin-top: 2rem;
     font-size: 3rem;
     font-weight: bold;
 }
 .viewedProducts{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
     padding: 0 2rem;
     text-align: center;
 }
 .viewedPro{
-    width: 18%;
-    margin-left: 2rem;
+    font-size: 1.3rem;
 }
 .viewedPro img{
     width: 90%;
 }
 .viewedPro button{
     margin-top: 1rem;
-    background: #222222;
+    background: #242323;
     padding: 6px 18px;
     color: white;
+}
+@media (min-width: 650px) {
+    .viewedProducts {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 850px) {
+    .viewedProducts {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
 }

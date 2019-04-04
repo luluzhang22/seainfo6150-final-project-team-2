@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
 
-class OrderStep2 extends Component {
+class OrderStep3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,13 +29,13 @@ class OrderStep2 extends Component {
 
       const product = this.props.products[selectedProductId];
       return this.state.submittedSuccessfully
-          ? (<Redirect to="/order/3"/>)
+          ? (<Redirect to="/order/4"/>)
           : (
               <div>
-                  <OrderTabs cur="Exterior" selectedOptions={selectedOptions} product={product}
+                  <OrderTabs cur="Interior" selectedOptions={selectedOptions} product={product}
                              productImg={selectedProductImg}/>
                   <form onSubmit={this.handleSubmit.bind(this)}>
-                      {options.color.name}: <input onChange={setProductOption.bind(null, 'color')}/>
+                      {options.interiorFabricColor.name}: <input onChange={setProductOption.bind(null, 'interiorFabricColor')}/>
                       <div className={styles.orderFooter}>
                           <input type="submit" value="Next"/>
                       </div>
@@ -45,9 +45,9 @@ class OrderStep2 extends Component {
   }
 }
 
-OrderStep2.propTypes = {
+OrderStep3.propTypes = {
   options: PropTypes.object.isRequired,
   selectedProductId: PropTypes.string
 };
 
-export default OrderStep2;
+export default OrderStep3;

@@ -1,6 +1,7 @@
 .slideshow{
     position: relative;
     margin: 1rem auto;
+    min-width: 500px;
 }
 .slideshow > div{
     margin: 0 auto;
@@ -50,22 +51,52 @@
     position: absolute;
     background-color: #f7f7f7;
     height: 100%;
-    width: 25%;
+    width: 35%;
     border-radius: 2rem;
     text-align: center;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.advertisement2{
+    margin-left: 4rem;
+}
+.advertisement3{
+    margin-left: 8rem;
 }
 .adTitle{
-    margin-top: 5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .adEmphasize{
-    font-size: 4rem;
+    font-size: 2.2rem;
 }
 .adButton{
     margin-top: 1rem;
-    font-size: 3rem;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
     border-radius: 1rem;
-    background-color: #222222;
+    background-color: #242323;
     color: white;
+}
+
+@media (min-width: 700px) {
+    .advertisement{
+        width: 35%;
+    }
+    .adTitle{
+        font-size: 2rem;
+    }
+    .adEmphasize{
+        font-size: 4rem;
+    }
+    .adButton{
+        font-size: 3rem;
+        padding: 2rem 4rem;
+    }
+}
+@media (min-width: 1000px) {
+    .advertisement{
+        width: 25%;
+    }
 }

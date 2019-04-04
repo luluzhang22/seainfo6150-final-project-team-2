@@ -11,7 +11,8 @@ export default (
     products,
     selectedOptions: {},
     selectedProductId: null,
-    viewedProducts: []
+    viewedProducts: [],
+    selectedProductImg: null
   },
   action={}
 ) => {
@@ -55,10 +56,13 @@ export default (
           selectedOptions = {}
       }
 
+      const proImg = state.categories[selectedProduct.categoryId].img.lg;
+
       return {
         ...state,
         selectedProductId: action.payload.id,
-        selectedOptions
+        selectedOptions,
+        selectedProductImg: proImg
       }
     case 'VIEW_PRODUCT':
       return {

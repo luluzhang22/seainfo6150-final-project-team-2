@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.module.css';
 
 const Footer = () => (
-    <div>
+    <div className={styles.footer}>
         <div className={styles.info}>
             <div className={styles.subscribe}>
                 <p>
@@ -16,7 +16,7 @@ const Footer = () => (
                     <button className={styles.emailButton}>SUBSCRIBE</button>
                 </p>
             </div>
-            <div className={styles.phone}>
+            <div>
                 <p>
                     +1 (206) 222 2222
                 </p>
@@ -27,7 +27,7 @@ const Footer = () => (
                     Find a store
                 </p>
             </div>
-            <div className={styles.contact}>
+            <div>
                 <p>
                     CONTACT US
                 </p>
@@ -47,7 +47,7 @@ const Footer = () => (
                     Affiliates
                 </p>
             </div>
-            <div className={styles.about}>
+            <div>
                 <p>
                     ABOUT
                 </p>
@@ -65,9 +65,9 @@ const Footer = () => (
                 </p>
             </div>
         </div>
-        <div className={styles.footer}>
+        <div className={styles.bottom}>
             @Company 2019
-            <div className={styles.mediaShare}>
+            <div>
                 <img src='/assets/img/icons/instagram.png' alt='instagram'/>
                 <img src='/assets/img/icons/twitter.png' alt='twitter'/>
                 <img src='/assets/img/icons/facebook.png' alt='facebook'/>

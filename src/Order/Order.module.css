@@ -1,0 +1,68 @@
+/*order tabs*/
+.orderTabs{
+    margin-bottom: 2rem;
+    min-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-size: 2rem;
+    height: 10rem;
+    line-height: 10rem;
+    text-align: center;
+}
+.orderTab{
+    border-right: 0.5px solid #242323;
+    border-bottom: 0.5px solid #242323;
+}
+.activedTab{
+    font-weight: bold;
+    border-right: 0.5px solid #242323;
+    border-bottom: 1rem solid #242323;
+}
+.proImg{
+    margin: 0 auto;
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+}
+.proImg img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    max-width: 150%;
+    max-height: 150%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+/*order footer*/
+.orderFooter{
+    background-color: #242323;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+    text-align: right;
+}
+.orderFooter > input{
+    font-size: 2rem;
+    background-color: #3c41e8;
+    border: #3c41e8;
+    padding: 6px 18px;
+    color: white;
+    border-radius: 0.7rem;
+}
+
+@media (min-width: 950px) {
+    .orderTabs{
+        font-size: 4rem;
+    }
+}
+/*add css for content in step1(Car tab)*/
+
+/*add css for content in step2(Exterior tab)*/
+
+/*add css for content in step3(Interior tab)*/
+
+/*add css for content in step4(Accessories tab)*/
+
+/*add css for content in step5(Payment tab)*/

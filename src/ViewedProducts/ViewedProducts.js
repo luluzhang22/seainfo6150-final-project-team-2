@@ -25,7 +25,7 @@ const ViewedProducts = ({ categories, products }) => {
       );
   });
   return (
-      <div>
+      <div className={styles.viewedContainer}>
           <div className={styles.viewedProductsTitle}>
               Last Viewed Vehicles
           </div>
