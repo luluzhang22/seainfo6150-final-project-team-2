@@ -1,12 +1,14 @@
+.viewedContainer{
+    background-color: #fafafa;
+    min-width: 500px;
+    padding-top: 2rem;
+}
 .viewedProductsTitle{
     text-align: center;
-    margin-top: 2rem;
     font-size: 3rem;
     font-weight: bold;
-    min-width: 500px;
 }
 .viewedProducts{
-    min-width: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
@@ -21,7 +23,7 @@
 }
 .viewedPro button{
     margin-top: 1rem;
-    background: #222222;
+    background: #242323;
     padding: 6px 18px;
     color: white;
 }

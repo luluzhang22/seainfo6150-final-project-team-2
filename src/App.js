@@ -24,6 +24,9 @@ import ProductDetail from './ProductDetail/ProductDetail';
 import ViewedProducts from './ViewedProducts/ViewedProducts';
 import OrderStep1 from './Order/OrderStep1';
 import OrderStep2 from './Order/OrderStep2';
+import OrderStep3 from './Order/OrderStep3';
+import OrderStep4 from './Order/OrderStep4';
+import OrderStep5 from './Order/OrderStep5';
 import Summary from './Order/Summary';
 import ThankYou from './Order/ThankYou';
 import NotFound from './NotFound/NotFound';
@@ -108,6 +111,18 @@ let App = (props) => (
           <Route
             exact path='/order/2'
             render={() => <OrderStep2 {...props} />}
+          />
+          <Route
+            exact path='/order/3'
+            render={() => <OrderStep3 {...props} />}
+          />
+          <Route
+            exact path='/order/4'
+            render={() => <OrderStep4 {...props} />}
+          />
+          <Route
+            exact path='/order/5'
+            render={() => <OrderStep5 {...props} />}
           />
           <Route
             exact path='/order/summary'
