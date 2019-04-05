@@ -1,0 +1,71 @@
+.wholeContainer{
+  text-align: center;
+}
+
+.innerContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.li{
+    text-align:left;
+}
+
+.img{
+  width: 70%;
+  height: auto;
+}
+
+.Button{
+    /* width: 40%;
+    height: 3%; */
+    margin: 1rem auto 2rem 10rem;
+    font-size: 2rem;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    background-color: #222222;
+    color: white;
+}
+
+.strike_price {
+  text-decoration: line-through;
+  font-weight: bold;
+  color: #C7384E;
+}
+
+.final_price {
+  font-weight: bold;
+  font-size: 20;
+}
+
+.imgTitle{
+  text-align: center;
+  font-size: 3rem;
+  /* width: 15%; */
+}
+
+.ID{
+  text-align: left;
+}
+
+.year{
+  text-align: left;
+}
+
+.price{
+  text-align: left;
+}
+
+.title{
+  text-align: left;
+}
+
+.description{
+  text-align: left;
+}
+
+.sorryMessage{
+  font-size: 3rem;
+}
