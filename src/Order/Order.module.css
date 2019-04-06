@@ -58,6 +58,46 @@
     }
 }
 /*add css for content in step1(Car tab)*/
+.package{
+    background-color: #FAFAFA;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+    text-align: right;
+}
+.package > input{
+    font-size: 2rem;
+    background-color: #242323;
+    border: #242323;
+    padding: 6px 18px;
+    color: #FAFAFA;
+    border-radius: 0.7rem;
+}
+.exhausts{
+    background-color: #FAFAFA;
+    height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+    text-align: right;
+}
+
+.exhausts > form{
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    margin-left: 75%;
+    border: #FAFAFA;
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+}
+
+.exhausts > form > option {
+    width:50px;
+    color:#242323;
+}
+
+
 
 /*add css for content in step2(Exterior tab)*/
 
