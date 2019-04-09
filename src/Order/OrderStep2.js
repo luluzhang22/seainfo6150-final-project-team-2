@@ -34,6 +34,17 @@ class OrderStep2 extends Component {
               <div>
                   <OrderTabs cur="Exterior" selectedOptions={selectedOptions} product={product}
                              productImg={selectedProductImg}/>
+                  <div className = {styles.exhausts}>
+                      <form onSubmit={this.handleSubmit.bind(this)}>
+                      Number of exhausts <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
+                      {options.numExhausts.name}:
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      </select>
+                      </form>
+                  </div>
                   <form onSubmit={this.handleSubmit.bind(this)}>
                       {options.color.name}: <input onChange={setProductOption.bind(null, 'color')}/>
                       <div className={styles.orderFooter}>

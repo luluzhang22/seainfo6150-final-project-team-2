@@ -34,34 +34,25 @@ class OrderStep1 extends Component {
               <div>
                   <OrderTabs cur="Car" selectedOptions={selectedOptions} product={product}
                              productImg={selectedProductImg}/>
+                  <form onSubmit={this.handleSubmit.bind(this)}>
+                  <p>Number of Engines</p>
                   <div className= {styles.package}>
-                      package 1
-                      <input type="submit" value="select"/>
-                  </div>
-                  <div className= {styles.package}>
-                      package 2
-                      <input type="submit" value="select"/>
+                      package 1: 4-cylinder
+                      <button type="button" value="4-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
                   </div>
                   <div className= {styles.package}>
-                      package 3
-                      <input type="submit" value="select"/>
+                      package 2: 6-cylinder
+                      <button type="button" value="6-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
                   </div>
-
-                  <div className = {styles.exhausts}>
-                      <form onSubmit={this.handleSubmit.bind(this)}>Number of exhausts
-                      <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
-                      {options.numExhausts.name}:
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      </select>
-                      </form>
+                  <div className= {styles.package}>
+                      package 3: 12-cylinder
+                      <button type="button" value="12-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
                   </div>
+              
                   <div className={styles.orderFooter}>
                       <input type="submit" value="Next"/>
                   </div>
-                  {/* </form> */}
+                  </form>
               </div>
           )
   }
