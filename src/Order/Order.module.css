@@ -65,46 +65,41 @@
     margin-top: 2rem;
     padding-right: 5rem;
 }
-.package > button{
-    margin-top:10px;
+.package > button {
+    margin-top:30px;
     float: right;
     font-size: 2rem;
     background-color: #242323;
-    border: #242323;
+    /* border: #FAFAFA; */
     padding: 6px 18px;
     color: #FAFAFA;
     border-radius: 0.7rem;
 }
 
-.package:hover{
-    font-weight:bold;
-}
-.package > input{
-    margin-top:10px;
+.package > button:hover{
+    margin-top: 30px;
     float: right;
     font-size: 2rem;
-    background-color: #242323;
-    border: #242323;
-    padding: 6px 18px;
-    color: #FAFAFA;
-    border-radius: 0.7rem;
-}
-
-.exhausts{
     background-color: #FAFAFA;
-    height: 8rem;
-    margin-top: 2rem;
-    padding-right: 5rem;
-    text-align: right;
-}
-
-.exhausts > form{
-    font-size: 2rem;
-    background-color: #FAFAFA;
-    margin-left: 75%;
-    border: #FAFAFA;
+    /* border: #242323; */
     padding: 6px 18px;
     color: #242323;
+    border-radius: 0.7rem;
+}
+.package:hover{
+    font-weight:bold;
+    background: #242323;
+    border:#FAFAFA;
+    color:#FAFAFA;
+}
+.package > .input{
+    margin-top:10px;
+    float: right;
+    font-size: 2rem;
+    background-color: #242323;
+    border: #FAFAFA;
+    padding: 6px 18px;
+    color: #FAFAFA;
     border-radius: 0.7rem;
 }
 
@@ -112,6 +107,23 @@
 
 
 /*add css for content in step2(Exterior tab)*/
+
+.exhausts{
+    background-color: #FAFAFA;
+    height: 15rem;
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.exhausts > .form{
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    margin-left: 65%;
+    border: #FAFAFA;
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+}
 
 /*add css for content in step3(Interior tab)*/
 

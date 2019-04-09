@@ -34,23 +34,48 @@ class OrderStep2 extends Component {
               <div>
                   <OrderTabs cur="Exterior" selectedOptions={selectedOptions} product={product}
                              productImg={selectedProductImg}/>
-                  <div className = {styles.exhausts}>
+                      
+                      <div className = {styles.exhausts}>
+                      <p>Number of exhausts</p>
                       <form onSubmit={this.handleSubmit.bind(this)}>
-                      Number of exhausts <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
-                      {options.numExhausts.name}:
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                      <div>
+                      <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
+                        {options.numExhausts.name}:
+                          <option>---</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
                       </select>
-                      </form>
-                  </div>
-                  <form onSubmit={this.handleSubmit.bind(this)}>
-                      {options.color.name}: <input onChange={setProductOption.bind(null, 'color')}/>
-                      <div className={styles.orderFooter}>
-                          <input type="submit" value="Next"/>
+
+                      <select id="color" onChange={setProductOption.bind(null, 'color')}>
+                        {options.color.name}:
+                          <option>--</option>
+                          <option value="#fffff0">Red</option>
+                          <option value="#ffffff">Black</option>
+                          <option value="#ff0000">Yellow</option>
+                          <option value="#000000">White</option>
+                      </select>   
+
+                      <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
+                          <option>--</option>
+                          <option value="No">No</option>
+                          <option value="Yes">Yes</option>
+                      </select>    
+
+                      <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
+                          <option>--</option>
+                          <option value="chrome">Chrome</option>
+                          <option value="steel">Steel</option> 
+                          <option value="plastic">Plastic</option>
+                      </select>  
+
                       </div>
-                  </form>
+                  <div className={styles.orderFooter}>
+                      <input type="submit" value="Next"/>
+                  </div>
+                  </form>          
+                  </div>   
               </div>
           )
   }

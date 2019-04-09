@@ -8,7 +8,8 @@ class OrderStep1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      submittedSuccessfully: false
+      submittedSuccessfully: false,
+      buttonStyle:""
     }
   }
 
@@ -38,15 +39,15 @@ class OrderStep1 extends Component {
                   <p>Number of Engines</p>
                   <div className= {styles.package}>
                       package 1: 4-cylinder
-                      <button type="button" value="4-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
+                      <button id="type1" type="button" value="4-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
                   </div>
                   <div className= {styles.package}>
                       package 2: 6-cylinder
-                      <button type="button" value="6-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
+                      <button id="type2" type="button" value="6-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
                   </div>
                   <div className= {styles.package}>
                       package 3: 12-cylinder
-                      <button type="button" value="12-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
+                      <button id="type3" type="button" value="12-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
                   </div>
               
                   <div className={styles.orderFooter}>
