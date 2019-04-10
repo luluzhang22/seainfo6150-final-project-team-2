@@ -1,0 +1,218 @@
+/*order tabs*/
+.orderTabs{
+    margin-bottom: 2rem;
+    min-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-size: 2rem;
+    height: 10rem;
+    line-height: 10rem;
+    text-align: center;
+}
+.orderTab{
+    border-right: 0.5px solid #242323;
+    border-bottom: 0.5px solid #242323;
+}
+.activedTab{
+    font-weight: bold;
+    border-right: 0.5px solid #242323;
+    border-bottom: 1rem solid #242323;
+}
+.proImg{
+    margin: 0 auto;
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+}
+.proImg img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    max-width: 150%;
+    max-height: 150%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+/*order footer*/
+.orderFooter{
+    background-color: #242323;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+    text-align: right;
+}
+.orderFooter > input{
+    font-size: 2rem;
+    background-color: #3c41e8;
+    border: #3c41e8;
+    padding: 6px 18px;
+    color: white;
+    border-radius: 0.7rem;
+}
+
+@media (min-width: 950px) {
+    .orderTabs{
+        font-size: 4rem;
+    }
+}
+/*add css for content in step1(Car tab)*/
+.package{
+    background-color: #FAFAFA;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+}
+.package > button {
+    margin-top:30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #242323;
+    /* border: #FAFAFA; */
+    padding: 6px 18px;
+    color: #FAFAFA;
+    border-radius: 0.7rem;
+}
+
+.package > button:hover{
+    margin-top: 30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    /* border: #242323; */
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+}
+.package:hover{
+    font-weight:bold;
+    background: #242323;
+    border:#FAFAFA;
+    color:#FAFAFA;
+}
+.package > .input{
+    margin-top:10px;
+    float: right;
+    font-size: 2rem;
+    background-color: #242323;
+    border: #FAFAFA;
+    padding: 6px 18px;
+    color: #FAFAFA;
+    border-radius: 0.7rem;
+}
+
+
+
+
+/*add css for content in step2(Exterior tab)*/
+
+.exhausts{
+    background-color: #FAFAFA;
+    height: 15rem;
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.exhausts > .form{
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    margin-left: 65%;
+    border: #FAFAFA;
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+}
+
+/*add css for content in step3(Interior tab)*/
+
+/*add css for content in step4(Accessories tab)*/
+
+/*add css for content in step5(Payment tab)*/
+.paymentTab{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+}
+.paymentTab > div {
+    line-height: 3rem;
+    align-items: center;
+    padding: 1rem 8rem 1rem 4rem;
+    border-right: 1px solid #dfdfdf;
+}
+.paymentTab > div:nth-child(even) {
+    border-right: none;
+}
+.buyerInfo > div, .buyerInfo > section > div{
+    display: flex;
+    flex-flow: row-reverse;
+}
+.buyerInfo > div > label{
+    width: 30%;
+    text-align: right;
+}
+.buyerInfo > div > input, .buyerInfo section input{
+    width: 60%;
+    border: 1px solid #242323;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+}
+.billAddressCheckbox{
+    width: 70%;
+    margin-left: 4rem;
+}
+.billAddressCheckbox > input{
+    width: 1rem;
+}
+.buyerInfo input:disabled{
+    border: 1px solid #dfdfdf;
+}
+.vehicleTitleInSummary{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.summary{
+    display: flex;
+    flex-direction: column;
+}
+.summaryImg{
+    margin: 0 auto;
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+}
+.summaryImg img{
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+.summaryTitle{
+    width: 60%;
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #242323;
+}
+.summary header{
+    text-align: center;
+}
+.orderDetail, .paymentDetail{
+    padding: 1rem 10rem 1rem 10rem;
+}
+.orderDetail > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.orderDetail img{
+    width: 100%;
+}
+.summaryBut{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}

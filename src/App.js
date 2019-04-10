@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 
 import {
@@ -12,17 +12,21 @@ import {
 
 
 // components
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import Home from './Home/Home';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import AllProducts from './AllProducts/AllProducts';
-import Categories from './Categories/Categories';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
 import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
 import ViewedProducts from './ViewedProducts/ViewedProducts';
 import OrderStep1 from './Order/OrderStep1';
 import OrderStep2 from './Order/OrderStep2';
+import OrderStep3 from './Order/OrderStep3';
+import OrderStep4 from './Order/OrderStep4';
+import OrderStep5 from './Order/OrderStep5';
 import Summary from './Order/Summary';
 import ThankYou from './Order/ThankYou';
 import NotFound from './NotFound/NotFound';
@@ -30,13 +34,9 @@ import NotFound from './NotFound/NotFound';
 let App = (props) => (
   <Router>
     <div className={styles.container}>
-      {/* start example of link to route */}
-      <Link to='/'>Home</Link>
-      {/* end example of link to route */}
-
-      {/* start list of product category links */}
-      <Categories categories={Object.values(props.categories)} />
-      {/* end list of product category links */}
+      {/* start header */}
+      <Header categories={props.categories}/>
+      {/* end header */}
 
 
       {/* start 5 most recently viewed products */}
@@ -113,6 +113,18 @@ let App = (props) => (
             render={() => <OrderStep2 {...props} />}
           />
           <Route
+            exact path='/order/3'
+            render={() => <OrderStep3 {...props} />}
+          />
+          <Route
+            exact path='/order/4'
+            render={() => <OrderStep4 {...props} />}
+          />
+          <Route
+            exact path='/order/5'
+            render={() => <OrderStep5 {...props} />}
+          />
+          <Route
             exact path='/order/summary'
             render={() => <Summary {...props} />}
           />
@@ -133,6 +145,8 @@ let App = (props) => (
           />
         </Switch>
       </main>
+
+        <Footer/>
     </div>
   </Router>
 );

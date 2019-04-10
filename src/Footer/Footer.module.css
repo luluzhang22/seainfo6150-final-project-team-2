@@ -1,0 +1,52 @@
+.footer{
+    min-width: 500px;
+}
+.info{
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    padding: 3rem 1rem 3rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.subscribe{
+    min-width: 10rem;
+}
+.emailInput{
+    background: white;
+    border: 1px solid #9b9b9b;
+    border-radius: 0.5rem;
+    padding: 6px 8px;
+    margin-right: 1rem;
+}
+.emailButton{
+    background: #242323;
+    padding: 6px 18px;
+    color: white;
+    border-radius: 0.5rem;
+}
+.bottom{
+    background: #242323;
+    height: 3rem;
+    line-height: 3rem;
+    color: white;
+    padding-left: 8rem;
+    padding-right: 10rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom img{
+    height: 1.3rem;
+    margin-right: 2rem;
+}
+@media (min-width: 750px) {
+    .info{
+        grid-template-columns: 6fr 1fr 1fr 1fr;
+        padding: 3rem 4rem 3rem 8rem;
+    }
+    .subscribe {
+        width: 28rem;
+    }
+}

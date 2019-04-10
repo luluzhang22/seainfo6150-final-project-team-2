@@ -1,0 +1,60 @@
+body{
+  background: #FAFAFA;
+}
+.physical_Location {
+  margin-left: 15%;
+  margin-top: 10px;
+  font-weight: normal;
+}
+.products_header {
+  margin: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.form {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 40px;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #F0F0F4;
+    padding: 20px;
+}
+
+.form > input[type=text]{
+    width: 100%; /* Full width */
+    color: #F0F0F4;
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
+.form > button[type=submit]{
+    text-align: center;
+    background-color: #242323;
+    width: 250px;
+    height: 40px;
+    display:block;
+    margin:0 auto;
+}
+
+textarea{
+    width: 100%;
+    color: #C2CCD0;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+
+
