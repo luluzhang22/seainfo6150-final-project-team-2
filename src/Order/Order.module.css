@@ -178,6 +178,7 @@
 .summary{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .summaryImg{
     margin: 0 auto;
@@ -197,11 +198,24 @@
     font-size: 2.5rem;
     border-bottom: 1px solid #242323;
 }
-.summary header{
-    text-align: center;
-}
+/*summary/thank-you page*/
 .orderDetail, .paymentDetail{
     padding: 1rem 10rem 1rem 10rem;
+    line-height: 2rem;
+}
+.orderDetail li{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+}
+.paymentDetail li{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    text-align: left;
+}
+.orderDetail li > div:nth-child(odd), .paymentDetail li > div:nth-child(odd) {
+    font-weight: bold;
+    text-align: right;
 }
 .orderDetail > div{
     display: grid;
@@ -215,4 +229,9 @@
     flex-flow: row;
     justify-content: space-around;
     margin-bottom: 2rem;
+}
+@media only print {
+    .orderDetail > div{
+        grid-template-columns: 1fr;
+    }
 }

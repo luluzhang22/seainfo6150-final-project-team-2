@@ -8,7 +8,7 @@ const Header = ({categories}) => (
         <div className={styles.navbar}>
             <div className={styles.categoryNav}>
                 <div className={styles.title}>
-                    Vehicle Mart
+                    <span>Vehicle Mart</span>
                     <img src='/assets/img/icons/arrow_down.png' alt='arrow_down'/>
                 </div>
                 <div className={styles.categoryList}>

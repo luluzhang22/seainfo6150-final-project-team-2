@@ -25,7 +25,7 @@
     width: 1.5rem;
 }
 .categoryList{
-    width: 35%;
+    width: 15rem;
     position: absolute;
     background-color: #f8f7f8;
     display: none;
@@ -45,6 +45,10 @@
     text-decoration: none;
     margin-right: 3%;
     color: white;
+}
+.categoryNav:hover .title, .pagesNav > a:hover{
+    color: #3c41e8;
+    font-weight: bold;
 }
 /*search*/
 .search{
@@ -75,11 +79,11 @@
     .title > img{
         width: 2.5rem;
     }
-    .categoryList{
-        width: 25%;
-    }
     .pagesNav{
         font-size: 1.8rem;
+    }
+    .categoryList{
+        width: 20rem;
     }
     .search{
         display: block;
