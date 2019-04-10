@@ -19,7 +19,7 @@ const Header = ({categories}) => (
                 <Link to='/'>Home</Link>
                 <Link to='/products'>Products</Link>
                 <Link to='/about'>About Us</Link>
-                <Link to='contact'>Contact Us</Link>
+                <Link to='/contact'>Contact Us</Link>
             </div>
         </div>
         <div className={styles.search}>

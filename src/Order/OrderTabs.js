@@ -11,7 +11,7 @@ const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
 
             <div className={styles.orderTabs}>
                 {
-                    tabs.map(val => <div className={cur === val ? styles.activedTab : styles.orderTab}>{val}</div>)
+                    tabs.map(val => <div key={val} className={cur === val ? styles.activedTab : styles.orderTab}>{val}</div>)
                 }
             </div>
             {

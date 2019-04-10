@@ -66,3 +66,70 @@
 /*add css for content in step4(Accessories tab)*/
 
 /*add css for content in step5(Payment tab)*/
+.paymentTab{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+}
+.paymentTab > div {
+    line-height: 3rem;
+    align-items: center;
+    padding: 1rem 8rem 1rem 4rem;
+    border-right: 1px solid #dfdfdf;
+}
+.paymentTab > div:nth-child(even) {
+    border-right: none;
+}
+.buyerInfo > div{
+    display: flex;
+    flex-flow: row-reverse;
+}
+.buyerInfo > div > label{
+    width: 20%;
+    text-align: right;
+}
+.buyerInfo > div > input{
+    width: 70%;
+    border: 1px solid #242323;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+}
+.billAddressCheckbox{
+    width: 70%;
+    margin-left: 4rem;
+}
+.billAddressCheckbox > input{
+    width: 1rem;
+}
+.buyerInfo > div > input:disabled{
+    border: 1px solid #dfdfdf;
+}
+.vehicleTitleInSummary{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.summary{
+    display: flex;
+    flex-direction: column;
+}
+.summaryImg{
+    margin: 0 auto;
+    height: 25rem;
+    position: relative;
+    overflow: hidden;
+}
+.summaryImg img{
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+.summaryTitle{
+    width: 60%;
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #242323;
+}
