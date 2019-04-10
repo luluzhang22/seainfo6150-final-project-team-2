@@ -313,7 +313,7 @@ const setHasHoodOrnament = (hasHoodOrnament) => (dispatch, getState) => {
   if (value) {
     const { options } = getState();
     dispatch(setOption({ id: 'hasHoodOrnament', value }));
-    dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values[0].id }));
+    dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values['battleship'].id }));
   } else {
     dispatch(removeOption('hasHoodOrnament'));
   }
@@ -354,7 +354,7 @@ const setHasTrunkMonkey = (hasTrunkMonkey) => (dispatch, getState) => {
   if (value) {
     const { options } = getState();
     dispatch(setOption({ id: 'hasTrunkMonkey', value }));
-    dispatch(setOption({ id: 'trunkMonkey', value: options.trunkMonkey.values[0].id }));
+    dispatch(setOption({ id: 'trunkMonkey', value: options.trunkMonkey.values['capuchin'].id }));
   } else {
     dispatch(removeOption('hasTrunkMonkey'));
     dispatch(removeOption('trunkMonkey'));

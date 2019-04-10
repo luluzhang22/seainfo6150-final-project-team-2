@@ -18,13 +18,21 @@ class OrderStep4 extends Component {
     });
   }
 
-  // if(selectedOptions.hasHoodOrnament == "true") {
-  //
+  // if(this.props.selectedOptions.hasHoodOrnament === "true") {
+  // 
   // } else {
   //
   // }
 
   render() {
+    const aa = () =>{
+      if(selectedOptions.hasHoodOrnament === "yes"){
+
+      }else{
+
+      }
+    }
+
       const {
           options,
           selectedProductId,
@@ -68,8 +76,8 @@ class OrderStep4 extends Component {
                       <spam>{options.hasHoodOrnament.name}</spam>
                       <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')}>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                       </select>
                     </div>
 
@@ -103,8 +111,8 @@ class OrderStep4 extends Component {
                       <spam>{options.hasTrunkMonkey.name}</spam>
                       <select id="hasTrunkMonkey-select" onChange={setProductOption.bind(null, 'hasTrunkMonkey')}>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                       </select>
                     </div>
                     <div>
@@ -137,8 +145,8 @@ class OrderStep4 extends Component {
                       <spam>{options.hasMonogrammedSteeringWheelCover.name}</spam>
                       <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover') }>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                       </select>
                       <spam>{options.monogram.name}(Three Letters)</spam>
                       <input id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'monogram')}
