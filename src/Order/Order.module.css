@@ -128,6 +128,26 @@
 /*add css for content in step3(Interior tab)*/
 
 /*add css for content in step4(Accessories tab)*/
+.blankOption{
+  display: none;
+}
+
+.unorderedList{
+  list-style: none;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+.order4Img{
+  border-radius: 10%;
+}
+
+.li{
+  background-color: res;
+}
 
 /*add css for content in step5(Payment tab)*/
 .paymentTab{
