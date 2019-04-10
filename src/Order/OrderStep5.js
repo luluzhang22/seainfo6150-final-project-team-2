@@ -4,7 +4,6 @@ import { Redirect } from "react-router-dom";
 import TotalPrice from "./TotalPrice";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
-import Error from "../Error/Error";
 
 class OrderStep5 extends Component {
     constructor(props) {
@@ -40,7 +39,7 @@ class OrderStep5 extends Component {
 
         const product = this.props.products[selectedProductId];
         return this.state.submittedSuccessfully
-            ? (<Redirect to="/order/thank-you"/>)
+            ? (<Redirect to="/order/summary"/>)
             : (
                 <div>
                     <OrderTabs cur="Payment" selectedOptions={selectedOptions} product={product}
@@ -86,10 +85,10 @@ class OrderStep5 extends Component {
                                     <label>Cell number:</label>
                                 </div>
                                 <div>
-                                    <input type="date" className={styles.calendar} max={new Date()}
-                                           onChange={setUserInfo.bind(null, 'Birthday')} required/>
+                                    <input type="date" onChange={setUserInfo.bind(null, 'Birthday')} required/>
                                     <label>Date of birth:</label>
                                 </div>
+
                                 <p>Shipment Information</p>
                                 <div>
                                     <div className={styles.billAddressCheckbox}>
@@ -98,45 +97,74 @@ class OrderStep5 extends Component {
                                     </div>
                                     <label>Billing address:</label>
                                 </div>
-                                <div>
-                                    <input type="text" placeholder='Street'
-                                           disabled={this.state.billAddressSameAsShipment}
-                                           onChange={setUserInfo.bind(null, 'Billing.Street')}
-                                           value={this.state.billAddressSameAsShipment && userInfo ? userInfo["Shipment.Street"] : ""}
-                                           required/>
-                                </div>
-                                <div>
-                                    <input type="text" placeholder='City'
-                                           disabled={this.state.billAddressSameAsShipment}
-                                           onChange={setUserInfo.bind(null, 'Billing.City')}
-                                           value={this.state.billAddressSameAsShipment && userInfo ? userInfo["Shipment.City"] : ""}
-                                           required/>
-                                </div>
-                                <div>
-                                    <input type="text" placeholder='State'
-                                           disabled={this.state.billAddressSameAsShipment}
-                                           onChange={setUserInfo.bind(null, 'Billing.State')}
-                                           value={this.state.billAddressSameAsShipment && userInfo ? userInfo["Shipment.State"] : ""}
-                                           required/>
-                                </div>
-                                <div>
-                                    <input type="text" placeholder='Zip Code'
-                                           disabled={this.state.billAddressSameAsShipment}
-                                           onChange={setUserInfo.bind(null, 'Billing.Zip Code')} pattern='[0-9]{5}'
-                                           value={this.state.billAddressSameAsShipment && userInfo ? userInfo["Shipment.Zip Code"] : ""}
-                                           required/>
-                                </div>
+                                {
+                                    this.state.billAddressSameAsShipment
+                                        ? (
+                                            <section>
+                                                <div>
+                                                    <input type="text" placeholder='Street'
+                                                           onChange={setUserInfo.bind(null, 'Billing.Street')}
+                                                           value={userInfo && userInfo["Shipment.Street"] ? userInfo["Shipment.Street"] : ""}
+                                                           required disabled/>
+                                                </div>
+                                                <div>
+                                                    <input type="text" placeholder='City'
+                                                           onChange={setUserInfo.bind(null, 'Billing.City')}
+                                                           value={userInfo && userInfo["Shipment.City"] ? userInfo["Shipment.City"] : ""}
+                                                           required disabled/>
+                                                </div>
+                                                <div>
+                                                    <input type="text" placeholder='State'
+                                                           onChange={setUserInfo.bind(null, 'Billing.State')}
+                                                           value={userInfo && userInfo["Shipment.State"] ? userInfo["Shipment.State"] : ""}
+                                                           required disabled/>
+                                                </div>
+                                                <div>
+                                                    <input type="text" placeholder='Zip Code'
+                                                           onChange={setUserInfo.bind(null, 'Billing.Zip Code')}
+                                                           pattern='[0-9]{5}'
+                                                           value={userInfo && userInfo["Shipment.Zip Code"] ? userInfo["Shipment.Zip Code"] : ""}
+                                                           required disabled/>
+                                                </div>
+                                            </section>
+                                        )
+                                        : (
+                                            <section>
+                                                <div>
+                                                    <input type="text" placeholder='Street'
+                                                           onChange={setUserInfo.bind(null, 'Billing.Street')}
+                                                           required/>
+                                                </div>
+                                                <div>
+                                                    <input type="text" placeholder='City'
+                                                           onChange={setUserInfo.bind(null, 'Billing.City')}
+                                                           required/>
+                                                </div>
+                                                <div>
+                                                    <input type="text" placeholder='State'
+                                                           onChange={setUserInfo.bind(null, 'Billing.State')}
+                                                           required/>
+                                                </div>
+                                                <div>
+                                                    <input type="text" placeholder='Zip Code'
+                                                           onChange={setUserInfo.bind(null, 'Billing.Zip Code')}
+                                                           pattern='[0-9]{5}'
+                                                           required/>
+                                                </div>
+                                            </section>
+                                        )
+                                }
+
                             </div>
                             <div className={styles.summary}>
                                 <div>
-
                                     <div className={styles.summaryImg}>
-                                    <img src={selectedProductImg} alt='productImg'/>
+                                        <img src={selectedProductImg} alt='productImg'/>
                                     </div>
                                     <div className={styles.vehicleTitleInSummary}>
-                                    {
-                                        (product) ? "Your " + product.title : "No vehicle selected"
-                                    }
+                                        {
+                                            (product) ? "Your " + product.title : "No vehicle selected"
+                                        }
                                     </div>
 
                                 </div>
@@ -144,19 +172,19 @@ class OrderStep5 extends Component {
                                     Summary
                                 </div>
                                 <div>
-                                {/*This will iterate through all the selected options so you can see what the user chose. */}
-                                <ul>
-                                    {
-                                        Object.keys(selectedOptions).map((option) => {
-                                            const originalOption = options[option];
-                                            const selectedValue = selectedOptions[option];
+                                    {/*This will iterate through all the selected options so you can see what the user chose. */}
+                                    <ul>
+                                        {
+                                            Object.keys(selectedOptions).map((option) => {
+                                                const originalOption = options[option];
+                                                const selectedValue = selectedOptions[option];
 
-                                            return (
-                                                <li key={option}>{originalOption.name}: {selectedValue}</li>
-                                            );
-                                        })
-                                    }
-                                </ul>
+                                                return (
+                                                    <li key={option}>{originalOption.name}: {selectedValue}</li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
                                 </div>
                                 <div className={styles.summaryTitle}>
                                     Price

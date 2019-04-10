@@ -22,10 +22,10 @@ body{
     padding: 20px;
 }
 
-input[type=text]{
+.form > input[type=text]{
     width: 100%; /* Full width */
     color: #F0F0F4;
-    padding: 12px; /* Some padding */  
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -34,7 +34,7 @@ input[type=text]{
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
   }
 
-button[type=submit]{
+.form > button[type=submit]{
     text-align: center;
     background-color: #242323;
     width: 250px;
@@ -56,5 +56,5 @@ textarea{
     resize: none;
 }
 
-  
+
 

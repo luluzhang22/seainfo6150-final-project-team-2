@@ -144,16 +144,16 @@
 .paymentTab > div:nth-child(even) {
     border-right: none;
 }
-.buyerInfo > div{
+.buyerInfo > div, .buyerInfo > section > div{
     display: flex;
     flex-flow: row-reverse;
 }
 .buyerInfo > div > label{
-    width: 20%;
+    width: 30%;
     text-align: right;
 }
-.buyerInfo > div > input{
-    width: 70%;
+.buyerInfo > div > input, .buyerInfo section input{
+    width: 60%;
     border: 1px solid #242323;
     border-radius: 0.3rem;
     padding: 1rem;
@@ -167,7 +167,7 @@
 .billAddressCheckbox > input{
     width: 1rem;
 }
-.buyerInfo > div > input:disabled{
+.buyerInfo input:disabled{
     border: 1px solid #dfdfdf;
 }
 .vehicleTitleInSummary{
@@ -196,4 +196,23 @@
     text-align: center;
     font-size: 2.5rem;
     border-bottom: 1px solid #242323;
+}
+.summary header{
+    text-align: center;
+}
+.orderDetail, .paymentDetail{
+    padding: 1rem 10rem 1rem 10rem;
+}
+.orderDetail > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.orderDetail img{
+    width: 100%;
+}
+.summaryBut{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    margin-bottom: 2rem;
 }
