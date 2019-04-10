@@ -9,14 +9,19 @@ class OrderStep1 extends Component {
     super(props);
     this.state = {
       submittedSuccessfully: false,
-      buttonStyle:""
+      buttonStyle: "buttonNormal"
     }
   }
-
   handleSubmit() {
     this.setState({
       submittedSuccessfully: true
     });
+  }
+
+  buttonHandler(e,setProductOption){
+      this.setState({buttonStyle:"buttonSelected"});
+      console.log('test');
+      setProductOption('engine',e);
   }
 
   render() {
@@ -39,7 +44,7 @@ class OrderStep1 extends Component {
                   <p>Number of Engines</p>
                   <div className= {styles.package}>
                       package 1: 4-cylinder
-                      <button id="type1" type="button" value="4-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
+                      <button className = {this.state.buttonStyle} id="type1" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(e,setProductOption)}>select</button>
                   </div>
                   <div className= {styles.package}>
                       package 2: 6-cylinder

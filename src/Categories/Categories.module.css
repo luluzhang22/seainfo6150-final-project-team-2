@@ -17,6 +17,11 @@
     padding-right: 1rem;
 }
 .categories li:hover{
-    background-color: white;
+    background-color: #FAFAFA;
     font-weight: bold;
+}
+
+.categories img{
+    height:30px;
+    padding-top: 1em;
 }

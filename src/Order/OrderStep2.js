@@ -39,6 +39,7 @@ class OrderStep2 extends Component {
                       <p>Number of exhausts</p>
                       <form onSubmit={this.handleSubmit.bind(this)}>
                       <div>
+                      <div>
                       <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
                         {options.numExhausts.name}:
                           <option>---</option>
@@ -47,29 +48,30 @@ class OrderStep2 extends Component {
                           <option value="3">3</option>
                           <option value="4">4</option>
                       </select>
+                      </div>
 
-                      <select id="color" onChange={setProductOption.bind(null, 'color')}>
-                        {options.color.name}:
-                          <option>--</option>
-                          <option value="#fffff0">Red</option>
-                          <option value="#ffffff">Black</option>
-                          <option value="#ff0000">Yellow</option>
-                          <option value="#000000">White</option>
-                      </select>   
+                      <div>
+                       <input type="color" 
+                       onChange={setProductOption.bind(null, 'color')}/>
+                      </div>
 
+                      <div>
                       <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
                           <option>--</option>
                           <option value="No">No</option>
                           <option value="Yes">Yes</option>
                       </select>    
+                      </div>
 
+                      <div>
                       <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
                           <option>--</option>
                           <option value="chrome">Chrome</option>
                           <option value="steel">Steel</option> 
                           <option value="plastic">Plastic</option>
                       </select>  
-
+                      </div>
+                      
                       </div>
                   <div className={styles.orderFooter}>
                       <input type="submit" value="Next"/>
