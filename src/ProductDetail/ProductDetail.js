@@ -31,7 +31,7 @@ class ProductDetail extends PureComponent {
         button = <div>
                     {/* start order button */}
                     <Link to="/order/1" onClick={selectProductId.bind(null, product.id)}>
-                      <button className={styles.Button}>Add to Cart</button>
+                      <button className={styles.Button}>Customize Yours Today</button>
                     </Link>
                     {/* end order button */}
                 </div>
