@@ -8,8 +8,8 @@ const Header = ({categories}) => (
         <div className={styles.navbar}>
             <div className={styles.categoryNav}>
                 <div className={styles.title}>
-                    <img src='/assets/img/icons/arrow_down.png' alt='arrow_down'/>
-                    <span>Vehicle Mart</span>
+                    <img src='/assets/img/icons/logo.png' alt='logo'/>
+                    {/* <span>Vehicle Mart</span> */}
                 </div>
                 <div className={styles.categoryList}>
                     <Categories categories={Object.values(categories)} />
