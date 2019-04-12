@@ -5,20 +5,59 @@
   margin-right: auto;
   font-size: 64px;
 }
+.subtitle{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
 .container{
   display:flex;
 }
-/* Style inputs */
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+
+
+.button {
+  margin-top:30px;
+  margin-left: 40%;
+  margin-right: 40%; 
+  float: none;
+  font-size: 2rem;
+  background-color: #242323;
+  /* border: #FAFAFA; */
+  padding: 6px 18px;
+  color: #FAFAFA;
+  border-radius: 0.7rem;
 }
+
+input {
+  display: block;
+  box-sizing: border-box;
+  outline:none;
+  width: 90%;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+textarea {
+  display: block;
+  box-sizing: border-box;
+  outline:none;
+  width: 90%; 
+  height: 200px;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .form{
-  width: 80%;
+  width: 90%;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 10%;
@@ -26,7 +65,7 @@ input[type=text], select, textarea {
   border-radius: 5px;
   color: #242323;
   box-sizing: border-box;
-  border: 1px #ccc; /* Gray border */
+  border: 1px solid #ccc; 
   background-color: #FAFAFA;
   font-size: 16px;    
   resize: none;
@@ -37,4 +76,12 @@ input[type=text], select, textarea {
   width: 50%;
   margin-top: 6px;
   padding: 20px;
+}
+.row > img{
+  width:100%;
+}
+
+.contactInfo{
+  margin-top:1em;
+  text-align: center;
 }

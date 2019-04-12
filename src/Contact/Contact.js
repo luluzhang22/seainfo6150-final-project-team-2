@@ -8,29 +8,27 @@ const Contact = () => (
   </div>
   <div className={styles.container}>
     <div className={styles.row}>
-      <img src='/assets/img/icons/logo.png' alt='logo' />
+      <img src='/assets/img/icons/dealer.png' alt='logo' />
+      <div className = {styles.contactInfo}>
+      Our Location: 1234 2nd Ave, Seattle, WA, 98109<br/>
+      Operation Hours: 9am to 5pm<br/>
+      Phone Number: (206)123-4567<br/>
+      </div>
     </div>
     <div class={styles.row}>
       <form className={styles.form}>
+        <div className={styles.subtitle}>Contact Us</div>
         <div>
-          <label>Full name: </label>
           <input type="text" placeholder='Full Name' />
         </div>
         <div>
-          <label>Shipment address:</label>
-          <input type="text" placeholder='Street' />
-        </div>
-        <div>
-          <label>E-Mail:</label>
           <input type="text" placeholder='E-Mail Address' />
         </div>
         <div>
-          <label>Phone number:</label>
           <input type="text" placeholder='Phone Number' />
         </div>
         <div>
-          <label>Cell number:</label>
-          <input type="text" placeholder='Cell Number' />
+          <textarea type="text" placeholder='...' />
         </div>
         <div>
           <button className={styles.button} type="button">Submit</button>
