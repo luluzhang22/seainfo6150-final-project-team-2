@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 import { Redirect } from "react-router-dom";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
+import "./Order.css";
 
 class OrderStep1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
       submittedSuccessfully: false,
-      buttonStyle: "buttonNormal"
+      buttonStyle: -1,
+      packageStyle: -1
     }
   }
   handleSubmit() {
@@ -18,9 +20,10 @@ class OrderStep1 extends Component {
     });
   }
 
-  buttonHandler(e,setProductOption){
-      this.setState({buttonStyle:"buttonSelected"});
-      console.log('test');
+  buttonHandler(num, e,setProductOption){
+    console.log(e.target);
+      this.setState({buttonStyle: num});
+      this.setState({packageStyle: num});
       setProductOption('engine',e);
   }
 
@@ -34,6 +37,8 @@ class OrderStep1 extends Component {
       } = this.props;
 
       const product = this.props.products[selectedProductId];
+      let packagestatus = this.state.packageStyle;
+      let buttonstatus = this.state.buttonStyle;
       return this.state.submittedSuccessfully
           ? (<Redirect to="/order/2"/>)
           : (
@@ -42,17 +47,17 @@ class OrderStep1 extends Component {
                              productImg={selectedProductImg}/>
                   <form onSubmit={this.handleSubmit.bind(this)}>
                   <p>Number of Engines</p>
-                  <div className= {styles.package}>
+                  <div className= {packagestatus === 0 ? "packageSelected": "packageNormal"}>
                       package 1: 4-cylinder
-                      <button className = {this.state.buttonStyle} id="type1" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(e,setProductOption)}>select</button>
+                      <button className = {buttonstatus === 0 ? "buttonSelected": "buttonNormal"} id="type1" number="0" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(0, e,setProductOption)}>select</button>
                   </div>
-                  <div className= {styles.package}>
+                  <div className= {packagestatus === 1 ? "packageSelected": "packageNormal"}>
                       package 2: 6-cylinder
-                      <button id="type2" type="button" value="6-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
+                      <button className = {buttonstatus === 1 ? "buttonSelected": "buttonNormal"} id="type1" number ="1" type="button" value="6-cylinder" onClick={(e) => this.buttonHandler(1, e,setProductOption)}>select</button>
                   </div>
-                  <div className= {styles.package}>
+                  <div className= {packagestatus === 2 ? "packageSelected": "packageNormal"}>
                       package 3: 12-cylinder
-                      <button id="type3" type="button" value="12-cylinder" onClick={setProductOption.bind(null, 'engine')}>select</button>
+                      <button className = {buttonstatus === 2 ? "buttonSelected": "buttonNormal"} id="type1" number = "2" type="button" value="12-cylinder" onClick={(e) => this.buttonHandler(2, e, setProductOption)}>select</button>
                   </div>
               
                   <div className={styles.orderFooter}>
