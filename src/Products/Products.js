@@ -14,7 +14,7 @@ const Products = ({ categories, products }) => {
               </div>
     } else {
         price = <div>
-                  <span className={styles.final_price}>${product.price} </span>
+                  <span className={styles.msrp_price}>${product.price} </span>
                 </div>
     }
     return (

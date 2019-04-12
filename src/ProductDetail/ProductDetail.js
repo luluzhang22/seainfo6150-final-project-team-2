@@ -23,7 +23,7 @@ class ProductDetail extends PureComponent {
               </span>
     } else {
         price = <span>
-                  <span className={styles.final_price}>${product.price} </span>
+                  <span className={styles.msrp_price}>${product.price} </span>
                 </span>
     }
 

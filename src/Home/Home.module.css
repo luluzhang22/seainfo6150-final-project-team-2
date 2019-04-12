@@ -93,6 +93,7 @@
     .adButton{
         font-size: 3rem;
         padding: 2rem 4rem;
+        cursor:pointer;
     }
 }
 @media (min-width: 1000px) {
