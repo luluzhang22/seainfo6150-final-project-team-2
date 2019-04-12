@@ -36,11 +36,10 @@ class OrderStep2 extends Component {
                              productImg={selectedProductImg}/>
                       
                       <div className = {styles.exhausts}>
-                      <p>Number of exhausts</p>
                       <form onSubmit={this.handleSubmit.bind(this)}>
                       <div>
                       <div>
-                      <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
+                      Number of exhausts<select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
                         {options.numExhausts.name}:
                           <option>---</option>
                           <option value="1">1</option>
@@ -51,12 +50,12 @@ class OrderStep2 extends Component {
                       </div>
 
                       <div>
-                       <input type="color" 
+                      Select Your Car Color<input type="color" 
                        onChange={setProductOption.bind(null, 'color')}/>
                       </div>
 
                       <div>
-                      <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
+                      Tinted Windows<select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
                           <option>--</option>
                           <option value="No">No</option>
                           <option value="Yes">Yes</option>
@@ -64,7 +63,7 @@ class OrderStep2 extends Component {
                       </div>
 
                       <div>
-                      <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
+                      Hubcap Materials<select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
                           <option>--</option>
                           <option value="chrome">Chrome</option>
                           <option value="steel">Steel</option> 

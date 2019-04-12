@@ -19,7 +19,7 @@ const Products = ({ categories, products }) => {
     }
     return (
       <li key={`${product.id}`} className={styles.Product}>
-          <Link to={`/products/${category.id}/${product.id}`} class={styles.ProductLink}>
+          <Link to={`/products/${category.id}/${product.id}`} className={styles.ProductLink}>
               <img src={category.img.sm} alt='productImage'/>
           <div >
               &#10095;{product.title}

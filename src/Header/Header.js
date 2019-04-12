@@ -7,10 +7,10 @@ const Header = ({categories}) => (
     <div className={styles.header}>
         <div className={styles.navbar}>
             <div className={styles.categoryNav}>
-                <div className={styles.title}>
-                    <img src='/assets/img/icons/logo.png' alt='logo'/>
+                <Link to='/' className={styles.title}>
+                <img src='/assets/img/icons/logo.png' alt='logo'/>
                     {/* <span>Vehicle Mart</span> */}
-                </div>
+                </Link>
                 <div className={styles.categoryList}>
                     <Categories categories={Object.values(categories)} />
                 </div>

@@ -1,4 +1,5 @@
 .categories{
+    border: 1px #242323;
     list-style: none;
     /*margin-left: 0;*/
     padding-left: 0;
@@ -17,11 +18,17 @@
     padding-right: 1rem;
 }
 .categories li:hover{
-    background-color: #FAFAFA;
+    background-color: #FFFFFF;
+    border: 1px #242323;
     font-weight: bold;
 }
 
 .categories img{
-    height:30px;
-    padding-top: 1em;
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height:1em;
+    /* padding-top: 1em; */
 }
+
