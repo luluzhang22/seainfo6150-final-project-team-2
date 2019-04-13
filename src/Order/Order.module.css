@@ -18,6 +18,13 @@
     border-right: 0.5px solid #242323;
     border-bottom: 1rem solid #242323;
 }
+.orderTabs a{
+    color: #242323;
+    text-decoration: none;
+}
+.orderTabs a:hover{
+    font-weight: bold;
+}
 .proImg{
     margin: 0 auto;
     height: 25rem;
@@ -42,8 +49,11 @@
     margin-top: 2rem;
     padding-right: 5rem;
     text-align: right;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
 }
-.orderFooter > input{
+.orderFooter input{
     font-size: 2rem;
     background-color: #3c41e8;
     border: #3c41e8;

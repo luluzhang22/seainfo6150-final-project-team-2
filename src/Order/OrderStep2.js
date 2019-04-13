@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
 
@@ -32,7 +32,7 @@ class OrderStep2 extends Component {
       ? (<Redirect to="/order/3" />)
       : (
         <div>
-          <OrderTabs cur="Exterior" selectedOptions={selectedOptions} product={product}
+          <OrderTabs cur={2} selectedOptions={selectedOptions} product={product}
             productImg={selectedProductImg} />
 
           <div className={styles.exhausts}>
@@ -73,7 +73,12 @@ class OrderStep2 extends Component {
 
               </div>
               <div className={styles.orderFooter}>
+                <Link to='/order/1'>
+                  <input type="button" value="Previous"/>
+                </Link>
+                  <div>
                 <input type="submit" value="Next" />
+                  </div>
               </div>
             </form>
           </div>

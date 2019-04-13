@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import TotalPrice from "./TotalPrice";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
@@ -42,7 +42,7 @@ class OrderStep5 extends Component {
             ? (<Redirect to="/order/summary"/>)
             : (
                 <div>
-                    <OrderTabs cur="Payment" selectedOptions={selectedOptions} product={product}
+                    <OrderTabs cur={5} selectedOptions={selectedOptions} product={product}
                                productImg={selectedProductImg}/>
                     <form onSubmit={this.handleSubmit.bind(this)}>
                         <div className={styles.paymentTab}>
@@ -197,10 +197,14 @@ class OrderStep5 extends Component {
                             </div>
                         </div>
                         <div className={styles.orderFooter}>
-                            <input type="submit" value="Check Out"/>
+                            <Link to='/order/4'>
+                                <input type="button" value="Previous"/>
+                            </Link>
+                            <div>
+                                <input type="submit" value="Check Out" />
+                            </div>
                         </div>
                     </form>
-
                 </div>
             )
     }
