@@ -38,16 +38,6 @@ let App = (props) => (
       <Header categories={props.categories}/>
       {/* end header */}
 
-
-      {/* start 5 most recently viewed products */}
-      <ViewedProducts
-        categories={props.categories}
-        products={
-          props.viewedProducts.map(productId => props.products[productId])
-        }
-      />
-      {/* end 5 most recently viewed products */}
-
       <main>
         {/* start error display -- I suggest you leave this here */}
         {
@@ -145,7 +135,14 @@ let App = (props) => (
           />
         </Switch>
       </main>
-
+        {/* start 5 most recently viewed products */}
+        <ViewedProducts
+            categories={props.categories}
+            products={
+                props.viewedProducts.map(productId => props.products[productId])
+            }
+        />
+        {/* end 5 most recently viewed products */}
         <Footer/>
     </div>
   </Router>

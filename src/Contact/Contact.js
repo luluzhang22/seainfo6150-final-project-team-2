@@ -28,7 +28,7 @@ const Contact = () => (
           <input type="text" placeholder='Phone Number' />
         </div>
         <div>
-          <textarea type="text" placeholder='...' />
+          <textarea placeholder='...' />
         </div>
         <div>
           <button className={styles.button} type="button">Submit</button>
