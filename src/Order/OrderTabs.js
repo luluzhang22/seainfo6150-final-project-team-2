@@ -21,7 +21,8 @@ const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
                                 if (element.key === 5) {
                                     if (!selectedOptions) {
                                         event.preventDefault();
-                                        alert('showing an alert');
+                                        alert('Please select value for following required options first: '
+                                            + requiredOptions.toString());
                                         return;
                                     }
                                     let unselectedOptions = [];
@@ -72,6 +73,6 @@ const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
     );
 };
 OrderTabs.propTypes = {
-    cur: PropTypes.string.isRequired
+    cur: PropTypes.number.isRequired
 };
 export default OrderTabs;

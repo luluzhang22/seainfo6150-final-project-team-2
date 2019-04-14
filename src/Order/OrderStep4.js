@@ -12,10 +12,30 @@ class OrderStep4 extends Component {
     }
   }
 
-  handleSubmit() {
-    this.setState({
-      submittedSuccessfully: true
-    });
+  handleSubmit(event) {
+      const requiredOptions = ['color', 'numSeats', 'interiorFabricColor', 'dashboardColor', 'dashboardLightsColor',
+          'hubcapsMaterial', 'numExhausts', 'spareTire', 'engine', 'floormatsColor'];
+      if (!this.props.selectedOptions) {
+          alert('Please select value for following required options first: '
+              + requiredOptions.toString());
+          event.preventDefault();
+          return;
+      }
+      let unselectedOptions = [];
+      requiredOptions.forEach(element => {
+          if (!this.props.selectedOptions[element]) {
+              unselectedOptions.push(element);
+          }
+      });
+      if (unselectedOptions.length > 0) {
+          alert('Please select value for following required options first: '
+              + unselectedOptions.toString());
+          event.preventDefault();
+          return;
+      }
+      this.setState({
+          submittedSuccessfully: true
+      });
   }
 
   render() {
@@ -115,7 +135,7 @@ class OrderStep4 extends Component {
                     </div>
 
                     <div>
-                      <spam>{options.spareTire.name}
+                      <span>{options.spareTire.name}
                         <select id="spareTire-select" onChange={setProductOption.bind(null, 'spareTire')}>
                           <option value="" className={styles.blankOption}></option>
                           <option value="S">S</option>
@@ -123,7 +143,7 @@ class OrderStep4 extends Component {
                           <option value="L">L</option>
                           <option value="XL">XL</option>
                         </select>
-                      </spam>
+                      </span>
                     </div>
 
                     <div>

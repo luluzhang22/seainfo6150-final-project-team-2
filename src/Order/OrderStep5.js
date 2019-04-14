@@ -73,14 +73,14 @@ class OrderStep5 extends Component {
                                            required/>
                                 </div>
                                 <div>
-                                    <input type="text" placeholder='Phone Number(format: 123-4567890)'
-                                           onChange={setUserInfo.bind(null, 'Phone Number')} pattern='[0-9]{3}-[0-9]{7}'
+                                    <input type="text" placeholder='Phone Number'
+                                           onChange={setUserInfo.bind(null, 'Phone Number')} pattern='[0-9]{3}-[0-9]{7}||[0-9]{10}'
                                            required/>
                                     <label>Phone number:</label>
                                 </div>
                                 <div>
-                                    <input type="text" placeholder='Cell Number(format: 123-4567890)'
-                                           onChange={setUserInfo.bind(null, 'Cell Number')} pattern='[0-9]{3}-[0-9]{7}'
+                                    <input type="text" placeholder='Cell Number'
+                                           onChange={setUserInfo.bind(null, 'Cell Number')} pattern='[0-9]{3}-[0-9]{7}||[0-9]{10}'
                                            required/>
                                     <label>Cell number:</label>
                                 </div>
