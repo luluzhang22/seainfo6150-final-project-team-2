@@ -310,12 +310,14 @@ const setSpareTire = (spareTire) => (dispatch, getState) => {
 
 const setHasHoodOrnament = (hasHoodOrnament) => (dispatch, getState) => {
   const value = normalizeBoolean(hasHoodOrnament);
-  if (value) {
+  if (value === 'Yes') {
     const { options } = getState();
     dispatch(setOption({ id: 'hasHoodOrnament', value }));
+    //dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values[0].id }));
     dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values['battleship'].id }));
   } else {
     dispatch(removeOption('hasHoodOrnament'));
+    dispatch(removeOption('hoodOrnament'));
   }
 }
 
@@ -351,7 +353,7 @@ const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
 
 const setHasTrunkMonkey = (hasTrunkMonkey) => (dispatch, getState) => {
   const value = normalizeBoolean(hasTrunkMonkey);
-  if (value) {
+  if (value === 'Yes') {
     const { options } = getState();
     dispatch(setOption({ id: 'hasTrunkMonkey', value }));
     dispatch(setOption({ id: 'trunkMonkey', value: options.trunkMonkey.values['capuchin'].id }));
@@ -372,7 +374,7 @@ const setFloormatsColor = (floormatsColor) => (dispatch, getState) => {
 
 const setHasMonogrammedSteeringWheelCover = (hasMonogrammedSteeringWheelCover) => (dispatch, getState) => {
   const value = normalizeBoolean(hasMonogrammedSteeringWheelCover);
-  if (value) {
+  if (value === 'Yes') {
     dispatch(setOption({ id: 'hasMonogrammedSteeringWheelCover', value }));
   } else {
     dispatch(removeOption('hasMonogrammedSteeringWheelCover'));
