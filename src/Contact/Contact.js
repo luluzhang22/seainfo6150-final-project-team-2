@@ -2,33 +2,41 @@ import React from 'react';
 import styles from './Contact.module.css';
 
 const Contact = () => (
-  <html>
-  <body>
-  <h1 className={styles.products_header}>Contact US</h1>
   <div>
-    <article className = {styles.physical_Location}>
-    <p>Location</p>
-    <p>Time</p>
-    <p>Map</p>
-    </article>
+  <div className={styles.title}>
+  <span className={styles.title}>Contact Us</span>
   </div>
-  <div>
-  <form className={styles.form}>
-    Name:<br/>
-    <input type="text" name="Name" value="Your Fullname"/><br/>
-    E-mail Address:<br/>
-    <input type="text" name="email" value="E-mail Address"/><br/>
-    Subject:<br/>
-    <input type="text" name="subject" value="subject"/><br/>
-    Message:<br/>
-    <textarea>Some text...</textarea>
-    <br/>
-  <button type="submit" name="submit" value="Submit">Submit</button>
-  </form>
+  <div className={styles.container}>
+    <div className={styles.row}>
+      <img src='/assets/img/icons/dealer.png' alt='logo' />
+      <div className = {styles.contactInfo}>
+      Our Location: 1234 2nd Ave, Seattle, WA, 98109<br/>
+      Operation Hours: 9am to 5pm<br/>
+      Phone Number: (206)123-4567<br/>
+      </div>
+    </div>
+    <div className={styles.row}>
+      <form className={styles.form}>
+        <div className={styles.subtitle}>Contact Us</div>
+        <div>
+          <input type="text" placeholder='Full Name' />
+        </div>
+        <div>
+          <input type="text" placeholder='E-Mail Address' />
+        </div>
+        <div>
+          <input type="text" placeholder='Phone Number' />
+        </div>
+        <div>
+          <textarea placeholder='...' />
+        </div>
+        <div>
+          <button className={styles.button} type="button">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
-  </body>
-  </html>
-  
+  </div>
 );
 
 export default Contact;

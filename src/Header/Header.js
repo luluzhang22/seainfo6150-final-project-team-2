@@ -8,8 +8,9 @@ const Header = ({categories}) => (
         <div className={styles.navbar}>
             <div className={styles.categoryNav}>
                 <div className={styles.title}>
-                    <span>Vehicle Mart</span>
-                    <img src='/assets/img/icons/arrow_down.png' alt='arrow_down'/>
+                    <Link to='/'>
+                        <img src='/assets/img/icons/logo.png' alt='logo'/>
+                    </Link>
                 </div>
                 <div className={styles.categoryList}>
                     <Categories categories={Object.values(categories)} />

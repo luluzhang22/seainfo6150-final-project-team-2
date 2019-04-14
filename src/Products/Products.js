@@ -14,12 +14,12 @@ const Products = ({ categories, products }) => {
               </div>
     } else {
         price = <div>
-                  <span className={styles.final_price}>${product.price} </span>
+                  <span className={styles.msrp_price}>${product.price} </span>
                 </div>
     }
     return (
       <li key={`${product.id}`} className={styles.Product}>
-          <Link to={`/products/${category.id}/${product.id}`} class={styles.ProductLink}>
+          <Link to={`/products/${category.id}/${product.id}`} className={styles.ProductLink}>
               <img src={category.img.sm} alt='productImage'/>
           <div >
               &#10095;{product.title}

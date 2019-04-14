@@ -10,7 +10,7 @@ const Categories = ({ categories }) => (
         return (
           <li key={category.id}>
             <Link to={`/products/${category.id}`}>
-              <span><img className={styles.img} src={category.img.sm} alt="404"/>{category.name}</span>
+              <span><img className={styles.img} src={category.img.sm} alt="category"/> {category.name}</span>
                 <span>&#10095;</span>
             </Link>
           </li>

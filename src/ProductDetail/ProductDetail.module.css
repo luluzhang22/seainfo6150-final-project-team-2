@@ -32,12 +32,17 @@
 .strike_price {
   text-decoration: line-through;
   font-weight: bold;
-  color: #C7384E;
+  color: #242323;
 }
 
 .final_price {
   font-weight: bold;
-  font-size: 2rem;
+  color: #C7384E;
+}
+
+.msrp_price{
+  font-weight: bold;
+  color: #242323;
 }
 
 .imgTitle{

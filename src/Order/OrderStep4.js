@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
 
@@ -12,10 +12,30 @@ class OrderStep4 extends Component {
     }
   }
 
-  handleSubmit() {
-    this.setState({
-      submittedSuccessfully: true
-    });
+  handleSubmit(event) {
+      const requiredOptions = ['color', 'numSeats', 'interiorFabricColor', 'dashboardColor', 'dashboardLightsColor',
+          'hubcapsMaterial', 'numExhausts', 'spareTire', 'engine', 'floormatsColor'];
+      if (!this.props.selectedOptions) {
+          alert('Please select value for following required options first: '
+              + requiredOptions.toString());
+          event.preventDefault();
+          return;
+      }
+      let unselectedOptions = [];
+      requiredOptions.forEach(element => {
+          if (!this.props.selectedOptions[element]) {
+              unselectedOptions.push(element);
+          }
+      });
+      if (unselectedOptions.length > 0) {
+          alert('Please select value for following required options first: '
+              + unselectedOptions.toString());
+          event.preventDefault();
+          return;
+      }
+      this.setState({
+          submittedSuccessfully: true
+      });
   }
 
   render() {
@@ -133,7 +153,7 @@ class OrderStep4 extends Component {
           ? (<Redirect to="/order/5"/>)
           : (
               <div>
-                  <OrderTabs cur="Accessories" selectedOptions={selectedOptions} product={product}
+                  <OrderTabs cur={4} selectedOptions={selectedOptions} product={product}
                              productImg={selectedProductImg}/>
                   <form onSubmit={this.handleSubmit.bind(this)}>
 
@@ -196,7 +216,12 @@ class OrderStep4 extends Component {
                     </div>
 
                     <div className={styles.orderFooter}>
-                          <input type="submit" value="Next"/>
+                        <Link to='/order/3'>
+                            <input type="button" value="Previous"/>
+                        </Link>
+                        <div>
+                            <input type="submit" value="Next" />
+                        </div>
                     </div>
                   </form>
               </div>

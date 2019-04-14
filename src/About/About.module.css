@@ -1,0 +1,28 @@
+.title{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 64px;
+  }
+
+.textarea{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+    color: #242323;
+    box-sizing: border-box;
+    border: 1px #ccc; /* Gray border */
+    background-color: #FAFAFA;
+    font-size: 16px;    
+    resize: none;
+
+}
+.article{
+    margin-left: 10%;
+    margin-right: 10%;
+    text-indent: 2em;
+}
