@@ -12,31 +12,32 @@ class OrderStep4 extends Component {
     }
   }
 
+
   handleSubmit(event) {
-      const requiredOptions = ['color', 'numSeats', 'interiorFabricColor', 'dashboardColor', 'dashboardLightsColor',
-          'hubcapsMaterial', 'numExhausts', 'spareTire', 'engine', 'floormatsColor'];
-      if (!this.props.selectedOptions) {
-          alert('Please select value for following required options first: '
-              + requiredOptions.toString());
-          event.preventDefault();
-          return;
-      }
-      let unselectedOptions = [];
-      requiredOptions.forEach(element => {
-          if (!this.props.selectedOptions[element]) {
-              unselectedOptions.push(element);
-          }
-      });
-      if (unselectedOptions.length > 0) {
-          alert('Please select value for following required options first: '
-              + unselectedOptions.toString());
-          event.preventDefault();
-          return;
-      }
-      this.setState({
-          submittedSuccessfully: true
-      });
-  }
+     const requiredOptions = ['color', 'numSeats', 'interiorFabricColor', 'dashboardColor', 'dashboardLightsColor',
+         'hubcapsMaterial', 'numExhausts', 'spareTire', 'engine', 'floormatsColor'];
+     if (!this.props.selectedOptions) {
+         alert('Please select value for following required options first: '
+             + requiredOptions.toString());
+         event.preventDefault();
+         return;
+     }
+     let unselectedOptions = [];
+     requiredOptions.forEach(element => {
+         if (!this.props.selectedOptions[element]) {
+             unselectedOptions.push(element);
+         }
+     });
+     if (unselectedOptions.length > 0) {
+         alert('Please select value for following required options first: '
+             + unselectedOptions.toString());
+         event.preventDefault();
+         return;
+     }
+     this.setState({
+         submittedSuccessfully: true
+     });
+ }
 
   render() {
 
@@ -50,7 +51,7 @@ class OrderStep4 extends Component {
       } = this.props;
 
       let hoodOrnament;
-      if(selectedOptions.hasHoodOrnament === "true"){
+      if(selectedOptions.hasHoodOrnament === "Yes"){
           hoodOrnament =
           <div>
           <span>{options.hoodOrnament.name}</span>
@@ -81,7 +82,7 @@ class OrderStep4 extends Component {
       }
 
       let trunkMonkey;
-      if(selectedOptions.hasTrunkMonkey === 'true'){
+      if(selectedOptions.hasTrunkMonkey === 'Yes'){
         trunkMonkey =<div>
               <span>{options.trunkMonkey.name}</span>
                   <select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')}>
@@ -110,7 +111,7 @@ class OrderStep4 extends Component {
       }
 
       let monogram;
-      if(selectedOptions.hasMonogrammedSteeringWheelCover === 'true'){
+      if(selectedOptions.hasMonogrammedSteeringWheelCover === 'Yes'){
         monogram = <div>
           <span>{options.monogram.name}(Three Letters)</span>
           <input id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'monogram')}
@@ -184,8 +185,8 @@ class OrderStep4 extends Component {
                       <span>{options.hasHoodOrnament.name}($50 extra)</span>
                       <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')}>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                       </select>
                     </div>
 
@@ -196,7 +197,7 @@ class OrderStep4 extends Component {
                       <span>{options.hasTrunkMonkey.name}($50 extra)</span>
                       <select id="hasTrunkMonkey-select" onChange={setProductOption.bind(null, 'hasTrunkMonkey')}>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="true">Yes</option>
+                        <option value="Yes">Yes</option>
                         <option value="No">No</option>
                       </select>
                     </div>
@@ -207,7 +208,7 @@ class OrderStep4 extends Component {
                       <span>{options.hasMonogrammedSteeringWheelCover.name}($50 extra)</span>
                       <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover') }>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="true">Yes</option>
+                        <option value="Yes">Yes</option>
                         <option value="no">No</option>
                       </select>
 
@@ -217,10 +218,10 @@ class OrderStep4 extends Component {
 
                     <div className={styles.orderFooter}>
                         <Link to='/order/3'>
-                            <input type="button" value="Previous"/>
+                          <input type="button" value="Previous"/>
                         </Link>
                         <div>
-                            <input type="submit" value="Next" />
+                          <input type="submit" value="Next" />
                         </div>
                     </div>
                   </form>
