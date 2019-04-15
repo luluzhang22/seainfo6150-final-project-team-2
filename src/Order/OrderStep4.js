@@ -53,7 +53,7 @@ class OrderStep4 extends Component {
       let hoodOrnament;
       if(selectedOptions.hasHoodOrnament === "Yes"){
           hoodOrnament =
-          <div>
+          <div className={styles.premiumContainer}>
           <span>{options.hoodOrnament.name}</span>
           <select id="hoodOrnament-select" onChange={setProductOption.bind(null, 'hoodOrnament')}>
             {
@@ -69,8 +69,8 @@ class OrderStep4 extends Component {
               Object.values(options.hoodOrnament.values).map((hoodOrnament,key) => {
                 return (
                     <li className={styles.listItem} key={key}>
+                      <img className={styles.order4Img} src={hoodOrnament.img} alt={hoodOrnament.id}/>
                       <div className={styles.listP}>{hoodOrnament.id}</div>
-                      <img className={styles.order4Img} src={hoodOrnament.img} ult={hoodOrnament.id}/>
                     </li>
                 );
               })
@@ -83,9 +83,10 @@ class OrderStep4 extends Component {
 
       let trunkMonkey;
       if(selectedOptions.hasTrunkMonkey === 'Yes'){
-        trunkMonkey =<div>
-              <span>{options.trunkMonkey.name}</span>
-                  <select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')}>
+        trunkMonkey =
+            <div className={styles.premiumContainer}>
+              <div>{options.trunkMonkey.name}</div>
+              <div><select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')}>
                     {
                         Object.values(options.trunkMonkey.values).map(trunkMonkey => {
                             return (
@@ -93,20 +94,21 @@ class OrderStep4 extends Component {
                                 );
                               })
                             }
-                            </select>
-                              <ul className={styles.unorderedList}>
-                                {
-                                  Object.values(options.trunkMonkey.values).map((trunkMonkey,key)=> {
-                                    return (
-                                        <li key={key} className={styles.listItem}>
-                                          <div className={styles.listP}>{trunkMonkey.id}</div>
-                                          <img className={styles.order4Img} src={trunkMonkey.img.sm} alt={trunkMonkey.id}/>
-                                        </li>
-                                      );
-                                    })
-                                  }
-                                </ul>
-                            </div>
+                  </select>
+                </div>
+                  <ul className={styles.unorderedList}>
+                    {
+                      Object.values(options.trunkMonkey.values).map((trunkMonkey,key)=> {
+                        return (
+                            <li key={key} className={styles.listItem}>
+                              <img className={styles.order4Img} src={trunkMonkey.img.sm} alt={trunkMonkey.id}/>
+                              <div className={styles.listP}>{trunkMonkey.id}</div>
+                            </li>
+                          );
+                        })
+                      }
+                    </ul>
+                </div>
       }else{
       }
 
@@ -162,8 +164,8 @@ class OrderStep4 extends Component {
                     <span>{options.hasGPS.name}
                       <select id="hasGPS-select" onChange={setProductOption.bind(null, 'hasGPS')}>
                         <option value="" className={styles.blankOption}></option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                       </select>
                     </span>
                     </div>
