@@ -31,6 +31,7 @@ class OrderStep3 extends Component {
           selectedOptions,
           setProductOption,
           selectedProductImg,
+          error
       } = this.props;
 
       const product = this.props.products[selectedProductId];

@@ -4,7 +4,7 @@ import styles from './Order.module.css';
 import Error from "../Error/Error";
 import { Link } from 'react-router-dom';
 
-const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
+const OrderTabs = ({cur, selectedOptions, product, productImg, error}) => {
 
     const tabs = [{key: 1, value: "Car"}, {key:2, value: "Exterior"}, {key:3, value: "Interior"},
         {key: 4, value: "Accessories"}, {key: 5, value: "Payment"}];
@@ -55,7 +55,11 @@ const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
                         <div className={styles.proImg}>
                             <img src={productImg} alt='productImg'/>
                         </div>
-
+                        {/* start error display -- I suggest you leave this here */}
+                        {
+                            error && <Error error={error} />
+                        }
+                        {/* end error display */}
                         <div className={styles.debugLog}>
                             Show all selected options of product["productId": "{product.id}"] for testing
                             <ul>
