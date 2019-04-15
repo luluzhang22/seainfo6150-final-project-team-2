@@ -37,11 +37,11 @@ class OrderStep2 extends Component {
 
           <div className={styles.exhausts}>
             <form onSubmit={this.handleSubmit.bind(this)}>
-              <div>
+              <div className={styles.orderStep3Options}>
                 <div>
-                  Number of exhausts<select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
+                  <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
                     {options.numExhausts.name}:
-                          <option>---</option>
+                    <option value="1">Number of exhausts</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -55,16 +55,16 @@ class OrderStep2 extends Component {
                 </div>
 
                 <div>
-                  Tinted Windows<select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
-                    <option>--</option>
+                  <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
+                    <option value="No">Tinted Windows</option>
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
                   </select>
                 </div>
 
                 <div>
-                  Hubcap Materials<select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
-                    <option>--</option>
+                  <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
+                    <option>Hubcap Materials</option>
                     <option value="chrome">Chrome</option>
                     <option value="steel">Steel</option>
                     <option value="plastic">Plastic</option>
