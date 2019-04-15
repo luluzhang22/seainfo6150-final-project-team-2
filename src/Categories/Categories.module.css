@@ -1,0 +1,34 @@
+.categories{
+    border: 1px #242323;
+    list-style: none;
+    /*margin-left: 0;*/
+    padding-left: 0;
+}
+.categories a{
+    text-decoration: none;
+    line-height: 4rem;
+    color: #242323;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.categories li{
+    /*margin-left: 0;*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.categories li:hover{
+    background-color: #FFFFFF;
+    border: 1px #242323;
+    font-weight: bold;
+}
+
+.categories img{
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height:1em;
+    /* padding-top: 1em; */
+}
+

@@ -1,0 +1,64 @@
+
+.buttonNormal {
+    margin-top:30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #242323;
+    /* border: #FAFAFA; */
+    padding: 6px 18px;
+    color: #FAFAFA;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+.buttonSelected{
+    margin-top: 30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    /* border: #242323; */
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+.packageNormal {
+    background-color: #FAFAFA;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+}
+
+
+.packageSelected{
+    font-weight:bold;
+    background: #242323;
+    border:#FAFAFA;
+    color:#FAFAFA;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+}
+
+.packageNormal > button:hover {
+    margin-top: 30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    /* border: #242323; */
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+}
+
+
+
+.packageNormal:hover{
+    font-weight:bold;
+    background: #242323;
+    border:#FAFAFA;
+    color:#FAFAFA;
+}

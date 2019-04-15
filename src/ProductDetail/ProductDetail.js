@@ -23,7 +23,7 @@ class ProductDetail extends PureComponent {
               </span>
     } else {
         price = <span>
-                  <span className={styles.final_price}>${product.price} </span>
+                  <span className={styles.msrp_price}>${product.price} </span>
                 </span>
     }
 
@@ -31,7 +31,7 @@ class ProductDetail extends PureComponent {
         button = <div>
                     {/* start order button */}
                     <Link to="/order/1" onClick={selectProductId.bind(null, product.id)}>
-                      <button className={styles.Button}>Add to Cart</button>
+                      <button className={styles.Button}>Customize Yours Today</button>
                     </Link>
                     {/* end order button */}
                 </div>
@@ -43,7 +43,7 @@ class ProductDetail extends PureComponent {
     const category = categories[product.categoryId];
     return (
       <div className={styles.wholeContainer}>
-        <img className={styles.img} src={category.img.lg} />
+        <img className={styles.img} src={category.img.lg} alt="pics"/>
         <div className={styles.imgTitle}>{product.title}</div>
         <div className={styles.innerContainer}>
             <ul>

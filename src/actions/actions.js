@@ -150,9 +150,8 @@ const setNumSeats = (numSeats) => (dispatch, getState) => {
   const selectedProduct = products[selectedProductId];
   const maximumNumSeats = options.numSeats.requirements.maximumNum;
   const minimumNumSeats = options.numSeats.requirements.minimumNum;
-
-  if (Object.keys(options.numSeats.requirements).includes(selectedProduct.type)) {
-    numSeats = options.numSeats.requirements[selectedProduct.type];
+  if (Object.keys(options.numSeats.requirements).includes(selectedProduct.categoryId)) {
+    numSeats = options.numSeats.requirements[selectedProduct.categoryId];
   }
   if (numSeats > maximumNumSeats) {
     dispatch(setError(`Vehicles can have a maximum of ${maximumNumSeats} seats.`));
@@ -227,11 +226,9 @@ const setHasTintedWindows = (hasTintedWindows) => (dispatch, getState) => {
 const setHasRadio = (hasRadio) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasRadio.requirements, selectedProduct.type);
-
+  const hasProductRequirement = has(options.hasRadio.requirements, selectedProduct.categoryId);
   if (hasProductRequirement) {
-    hasRadio = get(options.hasRadio.requirements, selectedProduct.type);
-
+    hasRadio = get(options.hasRadio.requirements, selectedProduct.categoryId);
     if (!hasRadio) {
       dispatch(setError('The selected vehicle does not support radios.'));
     }
@@ -284,10 +281,10 @@ const setNumCupholders = (numCupholders) => (dispatch, getState) => {
 const setHasCigaretteLighters = (hasCigaretteLighters) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasCigaretteLighters.requirements, selectedProduct.type);
+  const hasProductRequirement = has(options.hasCigaretteLighters.requirements, selectedProduct.categoryId);
 
   if (hasProductRequirement) {
-    hasCigaretteLighters = get(options.hasCigaretteLighters.requirements, selectedProduct.type)
+    hasCigaretteLighters = get(options.hasCigaretteLighters.requirements, selectedProduct.categoryId)
 
     if (!hasCigaretteLighters) {
       dispatch(setError('The selected vehicle does not support cigarette lighters.'));
@@ -313,12 +310,14 @@ const setSpareTire = (spareTire) => (dispatch, getState) => {
 
 const setHasHoodOrnament = (hasHoodOrnament) => (dispatch, getState) => {
   const value = normalizeBoolean(hasHoodOrnament);
-  if (value) {
+  if (value === 'Yes') {
     const { options } = getState();
     dispatch(setOption({ id: 'hasHoodOrnament', value }));
-    dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values[0].id }));
+    //dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values[0].id }));
+    dispatch(setOption({ id: 'hoodOrnament', value: options.hoodOrnament.values['battleship'].id }));
   } else {
     dispatch(removeOption('hasHoodOrnament'));
+    dispatch(removeOption('hoodOrnament'));
   }
 }
 
@@ -333,10 +332,10 @@ const setEngine = (engine) => (dispatch, getState) => {
 const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasAirConditioning.requirements, selectedProduct.type);
+  const hasProductRequirement = has(options.hasAirConditioning.requirements, selectedProduct.categoryId);
 
   if (hasProductRequirement) {
-    hasAirConditioning = get(options.hasAirConditioning.requirements, selectedProduct.type)
+    hasAirConditioning = get(options.hasAirConditioning.requirements, selectedProduct.categoryId)
 
     if (!hasAirConditioning) {
       dispatch(setError('The selected vehicle does not support air conditioning.'));
@@ -354,10 +353,10 @@ const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
 
 const setHasTrunkMonkey = (hasTrunkMonkey) => (dispatch, getState) => {
   const value = normalizeBoolean(hasTrunkMonkey);
-  if (value) {
+  if (value === 'Yes') {
     const { options } = getState();
     dispatch(setOption({ id: 'hasTrunkMonkey', value }));
-    dispatch(setOption({ id: 'trunkMonkey', value: options.trunkMonkey.values[0].id }));
+    dispatch(setOption({ id: 'trunkMonkey', value: options.trunkMonkey.values['capuchin'].id }));
   } else {
     dispatch(removeOption('hasTrunkMonkey'));
     dispatch(removeOption('trunkMonkey'));
@@ -375,7 +374,7 @@ const setFloormatsColor = (floormatsColor) => (dispatch, getState) => {
 
 const setHasMonogrammedSteeringWheelCover = (hasMonogrammedSteeringWheelCover) => (dispatch, getState) => {
   const value = normalizeBoolean(hasMonogrammedSteeringWheelCover);
-  if (value) {
+  if (value === 'Yes') {
     dispatch(setOption({ id: 'hasMonogrammedSteeringWheelCover', value }));
   } else {
     dispatch(removeOption('hasMonogrammedSteeringWheelCover'));
