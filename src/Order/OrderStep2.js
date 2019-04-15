@@ -37,7 +37,7 @@ class OrderStep2 extends Component {
 
           <div className={styles.exhausts}>
             <form onSubmit={this.handleSubmit.bind(this)}>
-              <div className={styles.orderStep3Options}>
+              <div className={styles.orderStep2Options}>
                 <div>
                   <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
                     {options.numExhausts.name}:
@@ -49,9 +49,9 @@ class OrderStep2 extends Component {
                   </select>
                 </div>
 
-                <div>
-                  Select Your Car Color<input type="color"
-                    onChange={setProductOption.bind(null, 'color')} />
+                <div className={styles.orderStep2Options}>
+                  <a>Select Your Car Color</a>
+                  <input type="color" onChange={setProductOption.bind(null, 'color')} />
                 </div>
 
                 <div>

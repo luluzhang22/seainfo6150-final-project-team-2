@@ -46,17 +46,16 @@ class OrderStep1 extends Component {
           <OrderTabs cur={1} selectedOptions={selectedOptions} product={product}
             productImg={selectedProductImg} />
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <p>Number of Engines</p>
             <div className={packagestatus === 0 ? "packageSelected" : "packageNormal"}>
-              package 1: 4-cylinder
+              Base Package: 4-Cylinder Version
                       <button className={buttonstatus === 0 ? "buttonSelected" : "buttonNormal"} id="type1" number="0" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(0, e, setProductOption)}>select</button>
             </div>
             <div className={packagestatus === 1 ? "packageSelected" : "packageNormal"}>
-              package 2: 6-cylinder
+              Premium Package: 6-Cylinder Version
                       <button className={buttonstatus === 1 ? "buttonSelected" : "buttonNormal"} id="type1" number="1" type="button" value="6-cylinder" onClick={(e) => this.buttonHandler(1, e, setProductOption)}>select</button>
             </div>
             <div className={packagestatus === 2 ? "packageSelected" : "packageNormal"}>
-              package 3: 12-cylinder
+              Executive Package: 12-Cylinder Verision
                       <button className={buttonstatus === 2 ? "buttonSelected" : "buttonNormal"} id="type1" number="2" type="button" value="12-cylinder" onClick={(e) => this.buttonHandler(2, e, setProductOption)}>select</button>
             </div>
 
