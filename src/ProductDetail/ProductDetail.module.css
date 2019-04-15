@@ -47,28 +47,33 @@
 
 .imgTitle{
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
   /* width: 15%; */
 }
 
 .ID{
   text-align: left;
+  font-size: 2rem;
 }
 
 .year{
   text-align: left;
+  font-size: 2rem;
 }
 
 .price{
   text-align: left;
+  font-size: 2rem;
 }
 
 .title{
   text-align: left;
+  font-size: 2rem;
 }
 
 .description{
   text-align: left;
+  font-size: 2rem;
 }
 
 .sorryMessage{

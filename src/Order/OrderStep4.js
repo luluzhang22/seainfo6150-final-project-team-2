@@ -54,8 +54,8 @@ class OrderStep4 extends Component {
       if(selectedOptions.hasHoodOrnament === "Yes"){
           hoodOrnament =
           <div className={styles.premiumContainer}>
-          <span>{options.hoodOrnament.name}</span>
           <select id="hoodOrnament-select" onChange={setProductOption.bind(null, 'hoodOrnament')}>
+            <option value="">{options.hoodOrnament.name}</option>
             {
               Object.values(options.hoodOrnament.values).map(hoodOrnament => {
                 return (
@@ -85,8 +85,8 @@ class OrderStep4 extends Component {
       if(selectedOptions.hasTrunkMonkey === 'Yes'){
         trunkMonkey =
             <div className={styles.premiumContainer}>
-              <div>{options.trunkMonkey.name}</div>
-              <div><select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')}>
+              <select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')}>
+                <option value="">{options.trunkMonkey.name}}</option>
                     {
                         Object.values(options.trunkMonkey.values).map(trunkMonkey => {
                             return (
@@ -95,7 +95,6 @@ class OrderStep4 extends Component {
                               })
                             }
                   </select>
-                </div>
                   <ul className={styles.unorderedList}>
                     {
                       Object.values(options.trunkMonkey.values).map((trunkMonkey,key)=> {
@@ -122,35 +121,6 @@ class OrderStep4 extends Component {
       }else{
       }
 
-      // const hoodOraType = () => {
-      //   if (selectedOptions.hasHoodOrnament === 'true') {
-      //     return(
-      //       <div className={styles.oras}>
-      //         <h4>{options.hoodOrnament.name}</h4>
-      //         <div className={styles.oraType}>
-      //           {Object.keys(options.hoodOrnament.values).map((value, index) => {
-      //             return (
-      //               <div key={index} className={styles.singleOra}>
-      //                 <img src={options.hoodOrnament.values[value].img} alt={options.hoodOrnament.values[value].id}/>
-      //                 <label>
-      //                   <input
-      //                     type='radio'
-      //                     name='hoodOrnament'
-      //                     value={options.hoodOrnament.values[value].id || ''}
-      //                     onChange={setProductOption.bind(null, 'hoodOrnament')}
-      //                     defaultChecked={value==='battleship'}
-      //                   />
-      //                   {value}
-      //                 </label>
-      //               </div>
-      //               )
-      //           })}
-      //         </div>
-      //       </div>
-      //     )
-      //   }
-      // };
-
       const product = this.props.products[selectedProductId];
       return this.state.submittedSuccessfully
           ? (<Redirect to="/order/5"/>)
@@ -159,64 +129,55 @@ class OrderStep4 extends Component {
                   <OrderTabs cur={4} selectedOptions={selectedOptions} product={product}
                              productImg={selectedProductImg}/>
                   <form onSubmit={this.handleSubmit.bind(this)}>
+                    <div className={styles.orderStep4Options}>
 
-                    <div>
-                    <span>{options.hasGPS.name}
-                      <select id="hasGPS-select" onChange={setProductOption.bind(null, 'hasGPS')}>
-                        <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </span>
-                    </div>
+                      <div>
+                        <select id="hasGPS-select" onChange={setProductOption.bind(null, 'hasGPS')}>
+                          <option value="">GPS?</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
 
-                    <div>
-                      <span>{options.spareTire.name}
+                      <div>
                         <select id="spareTire-select" onChange={setProductOption.bind(null, 'spareTire')}>
-                          <option value="" className={styles.blankOption}></option>
+                          <option value="">Spare Tire</option>
                           <option value="S">S</option>
                           <option value="M">M</option>
                           <option value="L">L</option>
                           <option value="XL">XL</option>
                         </select>
-                      </span>
+                      </div>
+
+                      <div>
+                        <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')}>
+                          <option value="">Hood Ornament?($50 extra)</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select id="hasTrunkMonkey-select" onChange={setProductOption.bind(null, 'hasTrunkMonkey')}>
+                          <option value="">{options.hasTrunkMonkey.name}($50 extra)</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover') }>
+                          <option value="">Monogrammed Steering Wheel Cover?($50 extra)</option>
+                          <option value="Yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                      </div>
+
                     </div>
-
-
-                    <div>
-                      <span>{options.hasHoodOrnament.name}($50 extra)</span>
-                      <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')}>
-                        <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-
 
                     <div>{hoodOrnament}</div>
-
-                    <div>
-                      <span>{options.hasTrunkMonkey.name}($50 extra)</span>
-                      <select id="hasTrunkMonkey-select" onChange={setProductOption.bind(null, 'hasTrunkMonkey')}>
-                        <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </div>
-
                     <div>{trunkMonkey}</div>
-
-                    <div>
-                      <span>{options.hasMonogrammedSteeringWheelCover.name}($50 extra)</span>
-                      <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover') }>
-                        <option value="" className={styles.blankOption}></option>
-                        <option value="Yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-
                     <div>{monogram}</div>
-
-                    </div>
 
                     <div className={styles.orderFooter}>
                         <Link to='/order/3'>
