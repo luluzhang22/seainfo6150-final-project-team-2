@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Redirect, Link } from "react-router-dom";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
+import Error from '../Error/Error'
+
 
 class OrderStep2 extends Component {
   constructor(props) {
@@ -37,7 +39,7 @@ class OrderStep2 extends Component {
           <form onSubmit={this.handleSubmit.bind(this)}>
           <div className={styles.orderStep2Options}>
             <div>
-              <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
+              <select id="exhaust-select" defaultValue={selectedOptions.numExhausts?selectedOptions.numExhausts:""} onChange={setProductOption.bind(null, 'numExhausts')}>
                 {options.numExhausts.name}:
                 <option value="1">Number of exhausts</option>
                 <option value="1">1</option>
@@ -49,19 +51,19 @@ class OrderStep2 extends Component {
 
             <div>
               <text>Select Your Car Color</text>
-              <input type="color" onChange={setProductOption.bind(null, 'color')} />
+              <input type="color" onChange={setProductOption.bind(null, 'color')} required/>
             </div>
 
             <div>
-              <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
+              <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')} required>
                 <option value="no">Tinted Windows</option>
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
               </select>
             </div>
 
             <div>
-              <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
+              <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')} required>
                 <option value="chrome">Hubcap Materials</option>
                 <option value="chrome">Chrome</option>
                 <option value="steel">Steel</option>
