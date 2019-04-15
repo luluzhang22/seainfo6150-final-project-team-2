@@ -8,6 +8,7 @@
     padding: 6px 18px;
     color: #FAFAFA;
     border-radius: 0.7rem;
+    cursor: pointer;
 }
 
 .buttonSelected{
@@ -19,6 +20,7 @@
     padding: 6px 18px;
     color: #242323;
     border-radius: 0.7rem;
+    cursor: pointer;
 }
 
 .packageNormal {

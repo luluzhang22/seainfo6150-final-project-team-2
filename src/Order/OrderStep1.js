@@ -61,7 +61,11 @@ class OrderStep1 extends Component {
             </div>
 
             <div className={styles.orderFooter}>
+              <div>
+              <input className={styles.order1Previous} type="button" value="Previous"/>
+              </div>
                 <div>
+
                     <input type="submit" value="Next" />
                 </div>
             </div>

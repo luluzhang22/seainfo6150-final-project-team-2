@@ -5,6 +5,7 @@ import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
 import Error from '../Error/Error'
 
+
 class OrderStep3 extends Component {
   constructor(props) {
     super(props);
@@ -14,9 +15,11 @@ class OrderStep3 extends Component {
   }
 
   handleSubmit() {
+    console.log(this.props.selectedOptions.dashboardColor);
     this.setState({
       submittedSuccessfully: true
     });
+
   }
 
 
@@ -28,20 +31,43 @@ class OrderStep3 extends Component {
           selectedOptions,
           setProductOption,
           selectedProductImg,
-          error,
-          categories
       } = this.props;
 
       const product = this.props.products[selectedProductId];
-      const category = product.categoryId;
+      const category = product!=null?product.categoryId:"";
       let radioOptions = options.radioType.values[category]
-      let k = 1;
+
       let i=1;
+
+      let errorElement;
+      let submitButtonElement =
+      <input type="submit" value="Next" />
+      if(
+        this.props.selectedOptions.dashboardColor === undefined||
+        this.props.selectedOptions.dashboardLightsColor === undefined||
+        this.props.selectedOptions.floormatsColor === undefined||
+        this.props.selectedOptions.hasAirConditioning === undefined||
+        this.props.selectedOptions.hasCigaretteLighters === undefined||
+        this.props.selectedOptions.hasCupholders === undefined||
+        this.props.selectedOptions.hasGloveBox === undefined||
+        this.props.selectedOptions.hasRadio === undefined||
+        this.props.selectedOptions.interiorFabricColor === undefined||
+        this.props.selectedOptions.numSeats === undefined
+
+      ) {
+        submitButtonElement =
+        <div className={styles.ToolTip}>
+        <input type="submit" value="Next" disabled={true} title="Please select options or correct errors before proceeding!!" />
+        </div>
+
+        errorElement = <Error error="Please select interior options!!" />
+      }
       let radioElement =
       <span>
-        <select onChange={setProductOption.bind(null, 'hasRadio')}>
+        <select defaultValue={this.props.selectedOptions.hasRadio!==undefined?this.props.selectedOptions.hasRadio:""} onChange={setProductOption.bind(null, 'hasRadio')}>
+        <option value="">{options.hasRadio.name}</option>
           <option value={true}>Yes</option>
-          <option selected value={false}>No</option>
+          <option value={false}>No</option>
         </select>
       </span>
       if(category==='sportsCar') {
@@ -54,7 +80,7 @@ class OrderStep3 extends Component {
         radioElement =
         <span>
           <select onChange={setProductOption.bind(null, 'hasRadio')}>
-            <option selected value={false}>Unavailable</option>
+            <option value={false}>Radio Type Unavailable</option>
           </select>
         </span>
       } else {
@@ -83,8 +109,9 @@ class OrderStep3 extends Component {
       if(selectedOptions.hasRadio==="true") {
         radioTypeElement =
         <div>
-        {options.radioType.name}:
-        <select onChange={setProductOption.bind(null, 'radioType')}>
+
+        <select defaultValue={this.props.selectedOptions.radioType!==undefined?this.props.selectedOptions.radioType:""} onChange={setProductOption.bind(null, 'radioType')}>
+        <option value="">{options.radioType.name}</option>
         {radioOptions.map(radioOption => (
         <option key={radioOption} value={radioOption}>
            {radioOption}
@@ -104,15 +131,17 @@ class OrderStep3 extends Component {
           : (
 
             <div>
-               <Error />
+
                <OrderTabs cur={3} selectedOptions={selectedOptions} product={product}
                   productImg={selectedProductImg}/>
                <form onSubmit={this.handleSubmit.bind(this)}>
+               {errorElement}
+
+               <div className={styles.orderStep3Options}>
                   <div>
 
-
-                     {options.interiorFabricColor.name}:
-                     <select onChange={setProductOption.bind(null, 'interiorFabricColor')}>
+                     <select defaultValue={this.props.selectedOptions.interiorFabricColor!==undefined?this.props.selectedOptions.interiorFabricColor:""} onChange={setProductOption.bind(null, 'interiorFabricColor')}>
+                     <option value="">{options.interiorFabricColor.name}</option>
                      <option value="Tan">Tan</option>
                      <option value="Gray">Gray</option>
                      <option value='Black'>Black</option>
@@ -122,8 +151,9 @@ class OrderStep3 extends Component {
                      </select>
                   </div>
                   <div>
-                     {options.numSeats.name}:
-                     <select onChange={setProductOption.bind(null, 'numSeats')}>
+
+                     <select defaultValue={this.props.selectedOptions.numSeats!==undefined?this.props.selectedOptions.numSeats:""} onChange={setProductOption.bind(null, 'numSeats')}>
+                     <option value="" >{options.numSeats.name}</option>
                      {seatOptions.map(option => (
                      <option key={option} value={option}>
                         {option}
@@ -132,8 +162,9 @@ class OrderStep3 extends Component {
                      </select>
                   </div>
                   <div>
-                     {options.dashboardColor.name}:
-                     <select onChange={setProductOption.bind(null, 'dashboardColor')}>
+
+                     <select defaultValue={this.props.selectedOptions.dashboardColor!==undefined?this.props.selectedOptions.dashboardColor:""} onChange={setProductOption.bind(null, 'dashboardColor')}>
+                     <option value="">{options.dashboardColor.name}</option>
                      <option value="Tan">Tan</option>
                      <option value="Gray">Gray</option>
                      <option value='Black'>Black</option>
@@ -143,55 +174,61 @@ class OrderStep3 extends Component {
                      </select>
                   </div>
                   <div>
-                     {options.dashboardLightsColor.name}: <input onChange={setProductOption.bind(null, 'dashboardLightsColor')}/>
+                     <span> Select {options.dashboardLightsColor.name} </span>
+                     <input value={this.props.selectedOptions.dashboardLightsColor!==undefined?this.props.selectedOptions.dashboardLightsColor:""} type="color" onChange={setProductOption.bind(null, 'dashboardLightsColor')}/>
                   </div>
                   <div>
-                     {options.hasRadio.name}:
+
                      {radioElement}
                   </div>
                   {radioTypeElement}
                   <div>
-                     {options.hasGloveBox.name}:
-                     <select onChange={setProductOption.bind(null, 'hasGloveBox')}>
+
+                     <select defaultValue={this.props.selectedOptions.hasGloveBox!==undefined?this.props.selectedOptions.hasGloveBox:""} onChange={setProductOption.bind(null, 'hasGloveBox')}>
+                     <option value="">{options.hasGloveBox.name}</option>
                      <option value={true}>Yes</option>
-                     <option selected value={false}>No</option>
+                     <option value={false}>No</option>
                      </select>
                   </div>
                   <div>
-                     {options.hasCupholders.name}:
-                     <select onChange={setProductOption.bind(null, 'hasCupholders')}>
+
+                     <select defaultValue={this.props.selectedOptions.hasCupholders!==undefined?this.props.selectedOptions.hasCupholders:""} onChange={setProductOption.bind(null, 'hasCupholders')}>
+                     <option value="">{options.hasCupholders.name}</option>
                      <option value={true}>Yes</option>
-                     <option selected value={false}>No</option>
+                     <option value={false}>No</option>
                      </select>
                   </div>
 
                   {numCupHoldersElement}
 
                   <div>
-                     {options.hasCigaretteLighters.name}:
-                     <select onChange={setProductOption.bind(null, 'hasCigaretteLighters')}>
+
+                     <select defaultValue={this.props.selectedOptions.hasCigaretteLighters!==undefined?this.props.selectedOptions.hasCigaretteLighters:""} onChange={setProductOption.bind(null, 'hasCigaretteLighters')}>
+                     <option value="">{options.hasCigaretteLighters.name}</option>
                      <option value={true}>Yes</option>
-                     <option selected value={false}>No</option>
+                     <option value={false}>No</option>
                      </select>
                   </div>
                   {numCigaretteLightersElement}
                   <div>
-                     {options.hasAirConditioning.name}:
-                     <select onChange={setProductOption.bind(null, 'hasAirConditioning')}>
+
+                     <select defaultValue={this.props.selectedOptions.hasAirConditioning!==undefined?this.props.selectedOptions.hasAirConditioning:""} onChange={setProductOption.bind(null, 'hasAirConditioning')}>
+                     <option value="">{options.hasAirConditioning.name}</option>
                      <option value={true}>Yes</option>
-                     <option selected value={false}>No</option>
+                     <option value={false}>No</option>
                      </select>
                   </div>
                   <div>
-                     {options.floormatsColor.name}:
-                     <input onChange={setProductOption.bind(null, 'floormatsColor')}/>
+                     <span>Select {options.floormatsColor.name} </span>
+                     <input type="color" value={this.props.selectedOptions.floormatsColor!==undefined?this.props.selectedOptions.floormatsColor:""} onChange={setProductOption.bind(null, 'floormatsColor')}/>
+                  </div>
                   </div>
                   <div className={styles.orderFooter}>
                       <Link to='/order/2'>
                           <input type="button" value="Previous"/>
                       </Link>
                       <div>
-                          <input type="submit" value="Next" />
+                      {submitButtonElement}
                       </div>
                   </div>
                </form>
