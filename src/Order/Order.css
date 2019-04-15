@@ -1,6 +1,7 @@
 
 .buttonNormal {
-    margin-top:30px;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
     float: right;
     font-size: 2rem;
     background-color: #FAFAFA;
@@ -12,7 +13,8 @@
 }
 
 .buttonSelected{
-    margin-top: 30px;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
     float: right;
     font-size: 2rem;
     background-color: #007fff;
@@ -59,7 +61,8 @@
 }
 
 .packageNormal > button:hover {
-    margin-top: 30px;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
     float: right;
     font-size: 2rem;
     background-color: #007fff;
