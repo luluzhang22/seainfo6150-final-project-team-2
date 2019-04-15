@@ -55,7 +55,8 @@ const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
                         <div className={styles.proImg}>
                             <img src={productImg} alt='productImg'/>
                         </div>
-                        <div>
+
+                        <div className={styles.debugLog}>
                             Show all selected options of product["productId": "{product.id}"] for testing
                             <ul>
                                 {
@@ -67,6 +68,7 @@ const OrderTabs = ({cur, selectedOptions, product, productImg}) => {
                                 }
                             </ul>
                         </div>
+
                     </div>
             }
         </div>

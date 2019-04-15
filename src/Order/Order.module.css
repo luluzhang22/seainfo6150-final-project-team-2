@@ -18,7 +18,7 @@
     border-right: 0.5px solid #242323;
     border-bottom: 1rem solid #242323;
 }
-.proImg{
+.proImg {
     margin: 0 auto;
     height: 25rem;
     position: relative;
@@ -33,23 +33,28 @@
     max-height: 150%;
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+
 }
 /*order footer*/
 .orderFooter{
     background-color: #242323;
     height: 8rem;
-    line-height: 8rem;
+    display: flex;
+    justify-content: space-between;
     margin-top: 2rem;
     padding-right: 5rem;
-    text-align: right;
+    position: relative;
+    align-items: center;
+
 }
-.orderFooter > input{
+.orderFooter input{
     font-size: 2rem;
-    background-color: #3c41e8;
+    background-color: white;
     border: #3c41e8;
-    padding: 6px 18px;
-    color: white;
+    color: black;
     border-radius: 0.7rem;
+    margin-left: 20px;
+
 }
 
 @media (min-width: 950px) {
@@ -110,7 +115,7 @@
 
 .exhausts{
     background-color: #FAFAFA;
-    height: 15rem;
+
     margin-top: 2rem;
     text-align: right;
 }
@@ -247,4 +252,44 @@
     flex-flow: row;
     justify-content: space-around;
     margin-bottom: 2rem;
+}
+
+.orderStep3Options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.orderStep3Options div{
+  margin: 10px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  padding: 10px;
+}
+
+.orderStep3Options select {
+  -webkit-appearance: none;
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+  border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 2px;
+   width: 250px;
+  background-color: #000;
+ overflow: hidden;
+ color: white;
+}
+
+.orderStep3Options input {
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+
+.order1Previous {
+  visibility: hidden;
+}
+
+.debugLog {
+  display: none;
 }
