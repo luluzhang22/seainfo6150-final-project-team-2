@@ -35,7 +35,8 @@ class OrderStep1 extends Component {
       selectedProductId,
       selectedOptions,
       setProductOption,
-      selectedProductImg
+      selectedProductImg,
+      error
     } = this.props;
 
     const product = this.props.products[selectedProductId];
@@ -46,7 +47,7 @@ class OrderStep1 extends Component {
       : (
         <div>
           <OrderTabs cur={1} selectedOptions={selectedOptions} product={product}
-            productImg={selectedProductImg} />
+            productImg={selectedProductImg} error={error}/>
           <form onSubmit={this.handleSubmit.bind(this)}>
             <button className={packagestatus === 0 ? "packageSelected" : "packageNormal"} id="type1" number="0" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(0, e, setProductOption)}>
               Base Package: 4-Cylinder Version

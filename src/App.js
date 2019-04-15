@@ -39,11 +39,6 @@ let App = (props) => (
       {/* end header */}
 
       <main>
-        {/* start error display -- I suggest you leave this here */}
-        {
-          props.error && <Error error={props.error} />
-        }
-        {/* end error display */}
 
         <Switch>
           <Route
