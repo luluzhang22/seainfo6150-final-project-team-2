@@ -47,26 +47,26 @@ class OrderStep1 extends Component {
             productImg={selectedProductImg} />
           <form onSubmit={this.handleSubmit.bind(this)}>
             <div className={packagestatus === 0 ? "packageSelected" : "packageNormal"}>
-              Base Package: 4-Cylinder Version
-                      <button className={buttonstatus === 0 ? "buttonSelected" : "buttonNormal"} id="type1" number="0" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(0, e, setProductOption)}>select</button>
+              <text>Base Package: 4-Cylinder Version</text>
+              <button className={buttonstatus === 0 ? "buttonSelected" : "buttonNormal"} id="type1" number="0" type="button" value="4-cylinder" onClick={(e) => this.buttonHandler(0, e, setProductOption)}>select</button>
             </div>
             <div className={packagestatus === 1 ? "packageSelected" : "packageNormal"}>
-              Premium Package: 6-Cylinder Version
-                      <button className={buttonstatus === 1 ? "buttonSelected" : "buttonNormal"} id="type1" number="1" type="button" value="6-cylinder" onClick={(e) => this.buttonHandler(1, e, setProductOption)}>select</button>
+              <text>Premium Package: 6-Cylinder Version</text>
+              <button className={buttonstatus === 1 ? "buttonSelected" : "buttonNormal"} id="type1" number="1" type="button" value="6-cylinder" onClick={(e) => this.buttonHandler(1, e, setProductOption)}>select</button>
             </div>
             <div className={packagestatus === 2 ? "packageSelected" : "packageNormal"}>
-              Executive Package: 12-Cylinder Verision
-                      <button className={buttonstatus === 2 ? "buttonSelected" : "buttonNormal"} id="type1" number="2" type="button" value="12-cylinder" onClick={(e) => this.buttonHandler(2, e, setProductOption)}>select</button>
+              <text>Executive Package: 12-Cylinder Verision</text>
+              <button className={buttonstatus === 2 ? "buttonSelected" : "buttonNormal"} id="type1" number="2" type="button" value="12-cylinder" onClick={(e) => this.buttonHandler(2, e, setProductOption)}>select</button>
             </div>
 
             <div className={styles.orderFooter}>
               <div>
-              <input className={styles.order1Previous} type="button" value="Previous"/>
+                <input className={styles.order1Previous} type="button" value="Previous" />
               </div>
-                <div>
+              <div>
 
-                    <input type="submit" value="Next" />
-                </div>
+                <input type="submit" value="Next" />
+              </div>
             </div>
           </form>
         </div>

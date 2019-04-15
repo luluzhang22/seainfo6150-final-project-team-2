@@ -3,10 +3,10 @@
     margin-top:30px;
     float: right;
     font-size: 2rem;
-    background-color: #242323;
+    background-color: #FAFAFA;
     /* border: #FAFAFA; */
     padding: 6px 18px;
-    color: #FAFAFA;
+    color: #242323;
     border-radius: 0.7rem;
     cursor: pointer;
 }
@@ -15,50 +15,66 @@
     margin-top: 30px;
     float: right;
     font-size: 2rem;
-    background-color: #FAFAFA;
+    background-color: #007fff;
     /* border: #242323; */
     padding: 6px 18px;
-    color: #242323;
+    color: #FAFAFA;
     border-radius: 0.7rem;
     cursor: pointer;
 }
 
 .packageNormal {
+    border-radius: 50px;
     background-color: #FAFAFA;
+    border: 1px solid #e0e0e0;
+    color: #cccccc;
+    font-size: 20px;
+    width: 60%;
     height: 8rem;
     line-height: 8rem;
     margin-top: 2rem;
     padding-right: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 
 .packageSelected{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
     font-weight:bold;
-    background: #242323;
-    border:#FAFAFA;
-    color:#FAFAFA;
+    background: #FAFAFA;
+    border: 2px solid #007fff;
+    font-size: 20px;
+    color:#242323;
+    width: 60%;
     height: 8rem;
     line-height: 8rem;
     margin-top: 2rem;
     padding-right: 5rem;
+    cursor: pointer;
+    text-align: center;
 }
 
 .packageNormal > button:hover {
     margin-top: 30px;
     float: right;
     font-size: 2rem;
-    background-color: #FAFAFA;
+    background-color: #007fff;
     /* border: #242323; */
     padding: 6px 18px;
-    color: #242323;
+    color: #FAFAFA;
     border-radius: 0.7rem;
 }
 
 
 
-.packageNormal:hover{
+/* .packageNormal:hover{
     font-weight:bold;
-    background: #242323;
-    border:#FAFAFA;
-    color:#FAFAFA;
+    background: #FAFAFA;
+    border:#242323;
+    color:#242323;
 }
+ */
