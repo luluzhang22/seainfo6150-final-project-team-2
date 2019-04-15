@@ -134,24 +134,34 @@
 
 .unorderedList{
   list-style: none;
+  width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   text-align: center;
-  padding: 0;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr */
+  padding: 0 1% 0 1%;
+  /* padding: 0; */
   margin: 0;
+}
+
+.premiumContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
 }
 
 .order4Img{
   border-radius: 10%;
-  width: 35%;
+  width: 50%;
   height: auto;
 }
 
 .listP{
   margin:0;
-  display: block;
   width:auto;
 }
 .listItem{
