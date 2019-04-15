@@ -53,7 +53,7 @@ class OrderStep2 extends Component {
               <input type="color" onChange={setProductOption.bind(null, 'color')} />
             </div>
 
-            <div>
+            <div hidden={Object.keys(options.hasTintedWindows.requirements).includes(product.categoryId)}>
               <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
                 <option value="no">Tinted Windows</option>
                 <option value="No">No</option>
