@@ -27,9 +27,10 @@
   padding: 6px 18px;
   color: #FAFAFA;
   border-radius: 0.7rem;
+  cursor: pointer;
 }
 
-input {
+.textbox {
   display: block;
   box-sizing: border-box;
   outline:none;
@@ -42,7 +43,7 @@ input {
   margin-right: 2rem;
 }
 
-textarea {
+.textarea {
   display: block;
   box-sizing: border-box;
   outline:none;

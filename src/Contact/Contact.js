@@ -18,18 +18,10 @@ const Contact = () => (
     <div class={styles.row}>
       <form className={styles.form}>
         <div className={styles.subtitle}>Contact Us</div>
-        <div>
-          <input type="text" placeholder='Full Name' />
-        </div>
-        <div>
-          <input type="text" placeholder='E-Mail Address' />
-        </div>
-        <div>
-          <input type="text" placeholder='Phone Number' />
-        </div>
-        <div>
-          <textarea type="text" placeholder='...' />
-        </div>
+          <input className={styles.textbox} type="text" placeholder='Full Name' />
+          <input className={styles.textbox} type="text" placeholder='E-Mail Address' />
+          <input className={styles.textbox} type="text" placeholder='Phone Number' />
+          <textarea className={styles.textarea} type="text" placeholder='...' />
         <div>
           <button className={styles.button} type="button">Submit</button>
         </div>
