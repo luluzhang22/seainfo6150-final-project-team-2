@@ -134,7 +134,7 @@ class OrderStep3 extends Component {
             <div>
 
                <OrderTabs cur={3} selectedOptions={selectedOptions} product={product}
-                  productImg={selectedProductImg}/>
+                  productImg={selectedProductImg} error={error}/>
                <form onSubmit={this.handleSubmit.bind(this)}>
                {errorElement}
 
