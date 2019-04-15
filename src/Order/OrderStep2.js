@@ -39,7 +39,7 @@ class OrderStep2 extends Component {
             <div>
               <select id="exhaust-select" onChange={setProductOption.bind(null, 'numExhausts')}>
                 {options.numExhausts.name}:
-                    <option value="1">Number of exhausts</option>
+                <option value="1">Number of exhausts</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -48,13 +48,13 @@ class OrderStep2 extends Component {
             </div>
 
             <div>
-              <a>Select Your Car Color</a>
+              <text>Select Your Car Color</text>
               <input type="color" onChange={setProductOption.bind(null, 'color')} />
             </div>
 
             <div>
               <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}>
-                <option value="No">Tinted Windows</option>
+                <option value="no">Tinted Windows</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
               </select>
@@ -62,7 +62,7 @@ class OrderStep2 extends Component {
 
             <div>
               <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')}>
-                <option>Hubcap Materials</option>
+                <option value="chrome">Hubcap Materials</option>
                 <option value="chrome">Chrome</option>
                 <option value="steel">Steel</option>
                 <option value="plastic">Plastic</option>
