@@ -18,7 +18,7 @@
     border-right: 0.5px solid #242323;
     border-bottom: 1rem solid #242323;
 }
-.proImg{
+.proImg {
     margin: 0 auto;
     height: 25rem;
     position: relative;
@@ -33,27 +33,28 @@
     max-height: 150%;
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+
 }
 /*order footer*/
 .orderFooter{
     background-color: #242323;
     height: 8rem;
-    line-height: 8rem;
+    display: flex;
+    justify-content: space-between;
     margin-top: 2rem;
     padding-right: 5rem;
-    text-align: right;
+    position: relative;
+    align-items: center;
+
 }
-.orderFooter > input{
-    background-color: #3c41e8;
-    border: 0px;
-    width: 160px;
-    height: 40px;
-    margin-top:30px;
-    float: right;
+.orderFooter input{
     font-size: 2rem;
-    color: #FAFAFA;
+    background-color: white;
+    border: #3c41e8;
+    color: black;
     border-radius: 0.7rem;
-    cursor: pointer;
+    margin-left: 20px;
+
 }
 
 @media (min-width: 950px) {
@@ -62,14 +63,61 @@
     }
 }
 /*add css for content in step1(Car tab)*/
+.package{
+    background-color: #FAFAFA;
+    height: 8rem;
+    line-height: 8rem;
+    margin-top: 2rem;
+    padding-right: 5rem;
+}
+.package > button {
+    margin-top:30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #242323;
+    /* border: #FAFAFA; */
+    padding: 6px 18px;
+    color: #FAFAFA;
+    border-radius: 0.7rem;
+}
+
+.package > button:hover{
+    margin-top: 30px;
+    float: right;
+    font-size: 2rem;
+    background-color: #FAFAFA;
+    /* border: #242323; */
+    padding: 6px 18px;
+    color: #242323;
+    border-radius: 0.7rem;
+}
+.package:hover{
+    font-weight:bold;
+    background: #242323;
+    border:#FAFAFA;
+    color:#FAFAFA;
+}
+.package > .input{
+    margin-top:10px;
+    float: right;
+    font-size: 2rem;
+    background-color: #242323;
+    border: #FAFAFA;
+    padding: 6px 18px;
+    color: #FAFAFA;
+    border-radius: 0.7rem;
+}
+
+
+
 
 /*add css for content in step2(Exterior tab)*/
 
 .exhausts{
     background-color: #FAFAFA;
-    /* height: 15rem; */
+
     margin-top: 2rem;
-    /* text-align: right; */
+    text-align: right;
 }
 
 .exhausts > .form{
@@ -91,19 +139,31 @@
 
 .unorderedList{
   list-style: none;
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   text-align: center;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 0 auto;
-  margin: 0 auto;
+  padding: 0;
+  margin: 0;
 }
 
 .order4Img{
   border-radius: 10%;
+  width: 35%;
+  height: auto;
 }
 
-.li{
-  background-color: res;
+.listP{
+  margin:0;
+  display: block;
+  width:auto;
+}
+.listItem{
+  width: 10%;
+  height: auto;
+  padding: auto,0;
+  margin: auto, 0;
 }
 
 /*add css for content in step5(Payment tab)*/
@@ -155,7 +215,6 @@
 .summary{
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 .summaryImg{
     margin: 0 auto;
@@ -175,24 +234,11 @@
     font-size: 2.5rem;
     border-bottom: 1px solid #242323;
 }
-/*summary/thank-you page*/
+.summary header{
+    text-align: center;
+}
 .orderDetail, .paymentDetail{
     padding: 1rem 10rem 1rem 10rem;
-    line-height: 2rem;
-}
-.orderDetail li{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-}
-.paymentDetail li{
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    text-align: left;
-}
-.orderDetail li > div:nth-child(odd), .paymentDetail li > div:nth-child(odd) {
-    font-weight: bold;
-    text-align: right;
 }
 .orderDetail > div{
     display: grid;
@@ -207,8 +253,43 @@
     justify-content: space-around;
     margin-bottom: 2rem;
 }
-@media only print {
-    .orderDetail > div{
-        grid-template-columns: 1fr;
-    }
+
+.orderStep3Options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.orderStep3Options div{
+  margin: 10px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  padding: 10px;
+}
+
+.orderStep3Options select {
+  -webkit-appearance: none;
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+  border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 2px;
+   width: 250px;
+  background-color: #000;
+ overflow: hidden;
+ color: white;
+}
+
+.orderStep3Options input {
+  float: right;
+  height: 20px;
+  width: 20px;
+}
+
+.order1Previous {
+  visibility: hidden;
+}
+
+.debugLog {
+  display: none;
 }

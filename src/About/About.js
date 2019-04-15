@@ -4,7 +4,7 @@ import styles from './About.module.css';
 const About = () => (
   <div>
     <div className={styles.title}>
-      <text className={styles.title}>About Us</text>
+      <span className={styles.title}>About Us</span>
     </div>
     <div className = {styles.textarea}>
       <article className = {styles.article}>
@@ -13,7 +13,7 @@ const About = () => (
         <p>What else do you need to know about us? Our company values center on loyalty. Loyalty to you, loyalty to our community and loyalty to our employees. We like to think if we treat you with the respect and consideration you deserve, you’ll keep coming back for more. We know we must be doing something right, because we have many employees here who have worked for us for more than a decade, and we’re always happy to see familiar faces coming back for quality service work or to scope on their next new car. We hope you’ll become one of those familiar faces after you stop by Vehicle Mart and experience our customer service first hand.</p>
       </article>
     </div>
-    
+
   </div>
 );
 

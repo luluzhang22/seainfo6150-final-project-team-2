@@ -4,7 +4,7 @@ import styles from './Contact.module.css';
 const Contact = () => (
   <div>
   <div className={styles.title}>
-  <text className={styles.title}>Contact Us</text>
+  <span className={styles.title}>Contact Us</span>
   </div>
   <div className={styles.container}>
     <div className={styles.row}>
@@ -15,13 +15,21 @@ const Contact = () => (
       Phone Number: (206)123-4567<br/>
       </div>
     </div>
-    <div class={styles.row}>
+    <div className={styles.row}>
       <form className={styles.form}>
         <div className={styles.subtitle}>Contact Us</div>
-          <input className={styles.textbox} type="text" placeholder='Full Name' />
-          <input className={styles.textbox} type="text" placeholder='E-Mail Address' />
-          <input className={styles.textbox} type="text" placeholder='Phone Number' />
-          <textarea className={styles.textarea} type="text" placeholder='...' />
+        <div>
+          <input type="text" placeholder='Full Name' />
+        </div>
+        <div>
+          <input type="text" placeholder='E-Mail Address' />
+        </div>
+        <div>
+          <input type="text" placeholder='Phone Number' />
+        </div>
+        <div>
+          <textarea placeholder='...' />
+        </div>
         <div>
           <button className={styles.button} type="button">Submit</button>
         </div>

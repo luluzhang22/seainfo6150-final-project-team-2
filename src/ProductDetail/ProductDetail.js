@@ -43,7 +43,7 @@ class ProductDetail extends PureComponent {
     const category = categories[product.categoryId];
     return (
       <div className={styles.wholeContainer}>
-        <img className={styles.img} src={category.img.lg} />
+        <img className={styles.img} src={category.img.lg} alt="pics"/>
         <div className={styles.imgTitle}>{product.title}</div>
         <div className={styles.innerContainer}>
             <ul>

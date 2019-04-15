@@ -11,6 +11,8 @@
 /*navigation bar*/
 .navbar{
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     width: 100%;
 }
 /*category navigation*/
@@ -18,17 +20,15 @@
     width: 20%;
 }
 .title{
-    font-size: 2.2rem;
-    color: white;
+    min-width: 15rem;
 }
-.title > img{
-    width: 1.5em;
+.title img{
+    width: 80%;
 }
 .categoryList{
     width: 15rem;
     position: absolute;
-    border:3px;
-    border-style: solid;
+    border:3px solid;
     background-color: #f8f7f8;
     display: none;
     line-height: 2rem;
@@ -41,6 +41,7 @@
 }
 /*main navigation for pages*/
 .pagesNav{
+    line-height: 9rem;
     font-size: 1.5rem;
     width: 75%;
     color: white;
@@ -71,7 +72,7 @@
     /*width: 20%;*/
     color: white;
 }
-@media (min-width: 675px) {
+@media (min-width: 775px) {
     .header{
         padding-left: 3rem;
     }
@@ -79,20 +80,17 @@
         width: 80%;
     }
     .title{
-        font-size: 3rem;
+        max-width: 20rem;
     }
-    .title > img{
-        width: 50%;
+    .title img{
+        width: 80%;
     }
     .pagesNav{
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
         font-size: 2rem;
     }
     .categoryList{
-        margin-left: 0px;
+        margin-left: 0;
         width: 20rem;
     }
     .search{
@@ -101,15 +99,15 @@
     }
 
 }
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
     .navbar{
         width: 65%;
     }
     .categoryNav{
-        width: 45%;
+        width: 35%;
     }
     .pagesNav{
-        width: 55%;
+        width: 65%;
     }
     .search{
         width: 15%;

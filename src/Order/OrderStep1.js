@@ -43,7 +43,7 @@ class OrderStep1 extends Component {
       ? (<Redirect to="/order/2" />)
       : (
         <div>
-          <OrderTabs cur="Car" selectedOptions={selectedOptions} product={product}
+          <OrderTabs cur={1} selectedOptions={selectedOptions} product={product}
             productImg={selectedProductImg} />
           <form onSubmit={this.handleSubmit.bind(this)}>
             <p>Number of Engines</p>
@@ -61,7 +61,13 @@ class OrderStep1 extends Component {
             </div>
 
             <div className={styles.orderFooter}>
-              <input type="submit" value="Next" />
+              <div>
+              <input className={styles.order1Previous} type="button" value="Previous"/>
+              </div>
+                <div>
+
+                    <input type="submit" value="Next" />
+                </div>
             </div>
           </form>
         </div>
