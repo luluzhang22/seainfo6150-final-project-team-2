@@ -54,12 +54,12 @@ class OrderStep4 extends Component {
       if(selectedOptions.hasHoodOrnament === "Yes"){
           hoodOrnament =
           <div className={styles.premiumContainer}>
-          <select id="hoodOrnament-select" onChange={setProductOption.bind(null, 'hoodOrnament')}>
+          <select id="hoodOrnament-select" onChange={setProductOption.bind(null, 'hoodOrnament')} defaultValue={selectedOptions.hoodOrnament!==undefined?selectedOptions.hoodOrnament:""} required>
             <option value="">{options.hoodOrnament.name}</option>
             {
-              Object.values(options.hoodOrnament.values).map(hoodOrnament => {
+              Object.values(options.hoodOrnament.values).map((hoodOrnament,key) => {
                 return (
-                  <option value={hoodOrnament.id}>{hoodOrnament.id}</option>
+                  <option key={key} value={hoodOrnament.id}>{hoodOrnament.id}</option>
                 );
               })
             }
@@ -85,12 +85,12 @@ class OrderStep4 extends Component {
       if(selectedOptions.hasTrunkMonkey === 'Yes'){
         trunkMonkey =
             <div className={styles.premiumContainer}>
-              <select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')}>
-                <option value="">{options.trunkMonkey.name}}</option>
+              <select id="trunkMonkey-select" onChange={setProductOption.bind(null, 'trunkMonkey')} defaultValue={selectedOptions.trunkMonkey!==undefined?selectedOptions.trunkMonkey:""} required>
+                <option value="">{options.trunkMonkey.name}</option>
                     {
-                        Object.values(options.trunkMonkey.values).map(trunkMonkey => {
+                        Object.values(options.trunkMonkey.values).map((trunkMonkey,key) => {
                             return (
-                                <option value={trunkMonkey.id}>{trunkMonkey.id}</option>
+                                <option key={key} value={trunkMonkey.id}>{trunkMonkey.id}</option>
                                 );
                               })
                             }
@@ -113,9 +113,9 @@ class OrderStep4 extends Component {
 
       let monogram;
       if(selectedOptions.hasMonogrammedSteeringWheelCover === 'Yes'){
-        monogram = <div>
-          <span>{options.monogram.name}(Three Letters)</span>
-          <input id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'monogram')}
+        monogram = <div className={styles.finalContainer}>
+          <div>{options.monogram.name}(Three Letters)</div>
+          <input id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'monogram')} defaultValue={selectedOptions.monogram!==undefined?selectedOptions.monogram:""}
           pattern='[A-z]{3}'/>
         </div>
       }else{
@@ -132,7 +132,7 @@ class OrderStep4 extends Component {
                     <div className={styles.orderStep4Options}>
 
                       <div>
-                        <select id="hasGPS-select" onChange={setProductOption.bind(null, 'hasGPS')}>
+                        <select id="hasGPS-select" defaultValue={selectedOptions.hasGPS!==undefined?selectedOptions.hasGPS:""} onChange={setProductOption.bind(null, 'hasGPS')} required>
                           <option value="">GPS?</option>
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
@@ -140,7 +140,7 @@ class OrderStep4 extends Component {
                       </div>
 
                       <div>
-                        <select id="spareTire-select" onChange={setProductOption.bind(null, 'spareTire')}>
+                        <select id="spareTire-select" defaultValue={selectedOptions.spareTire!==undefined?selectedOptions.hasTire:""} onChange={setProductOption.bind(null, 'spareTire')} required>
                           <option value="">Spare Tire</option>
                           <option value="S">S</option>
                           <option value="M">M</option>
@@ -150,7 +150,7 @@ class OrderStep4 extends Component {
                       </div>
 
                       <div>
-                        <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')}>
+                        <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')} defaultValue={selectedOptions.hasHoodOrnament!==undefined?selectedOptions.hasHoodOrnament:""} required>
                           <option value="">Hood Ornament?($50 extra)</option>
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
@@ -166,7 +166,7 @@ class OrderStep4 extends Component {
                       </div>
 
                       <div>
-                        <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover') }>
+                        <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')} defaultValue={selectedOptions.hasMonogrammedSteeringWheelCover!==undefined?selectedOptions.hasMonogrammedSteeringWheelCover:""} required>
                           <option value="">Monogrammed Steering Wheel Cover?($50 extra)</option>
                           <option value="Yes">Yes</option>
                           <option value="no">No</option>
@@ -175,7 +175,7 @@ class OrderStep4 extends Component {
 
                     </div>
 
-                    <div>{hoodOrnament}</div>
+                    {hoodOrnament}
                     <div>{trunkMonkey}</div>
                     <div>{monogram}</div>
 
