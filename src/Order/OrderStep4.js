@@ -47,7 +47,8 @@ class OrderStep4 extends Component {
           selectedProductId,
           selectedOptions,
           setProductOption,
-          selectedProductImg
+          selectedProductImg,
+          error
       } = this.props;
 
       let hoodOrnament;
@@ -127,7 +128,7 @@ class OrderStep4 extends Component {
           : (
               <div>
                   <OrderTabs cur={4} selectedOptions={selectedOptions} product={product}
-                             productImg={selectedProductImg}/>
+                             productImg={selectedProductImg} error={error}/>
                   <form onSubmit={this.handleSubmit.bind(this)}>
                     <div className={styles.orderStep4Options}>
 

@@ -1,6 +1,6 @@
 
 .buttonNormal {
-    margin-top:2.5%;
+    margin-top: 2.5%;
     margin-bottom: 2.5%;
     float: right;
     font-size: 2rem;
@@ -22,7 +22,7 @@
     padding: 6px 18px;
     color: #FAFAFA;
     border-radius: 0.7rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .packageNormal {
@@ -33,12 +33,14 @@
     font-size: 20px;
     width: 60%;
     height: 8rem;
-    line-height: 8rem;
+    /* line-height: 8rem; */
     margin-top: 2rem;
+    padding-top: 1rem;
     padding-right: 5rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
+    cursor: pointer;
 }
 
 
@@ -48,15 +50,16 @@
     border-radius: 50px;
     font-weight:bold;
     background: #FAFAFA;
-    border: 2px solid #007fff;
+    border: 3px solid #007fff;
     font-size: 20px;
     color:#242323;
     width: 60%;
     height: 8rem;
-    line-height: 8rem;
+    /* line-height: 8rem; */
     margin-top: 2rem;
     padding-right: 5rem;
-    cursor: pointer;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
 }
 
