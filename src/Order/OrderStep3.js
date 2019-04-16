@@ -15,7 +15,6 @@ class OrderStep3 extends Component {
   }
 
   handleSubmit() {
-    console.log(this.props.selectedOptions.dashboardColor);
     this.setState({
       submittedSuccessfully: true
     });
@@ -39,30 +38,11 @@ class OrderStep3 extends Component {
       let radioOptions = options.radioType.values[category]
 
       let i=1;
+      let a=1;
 
-      let errorElement;
-      let submitButtonElement =
-      <input type="submit" value="Next" />
-      if(
-        this.props.selectedOptions.dashboardColor === undefined||
-        this.props.selectedOptions.dashboardLightsColor === undefined||
-        this.props.selectedOptions.floormatsColor === undefined||
-        this.props.selectedOptions.hasAirConditioning === undefined||
-        this.props.selectedOptions.hasCigaretteLighters === undefined||
-        this.props.selectedOptions.hasCupholders === undefined||
-        this.props.selectedOptions.hasGloveBox === undefined||
-        this.props.selectedOptions.hasRadio === undefined||
-        this.props.selectedOptions.interiorFabricColor === undefined||
-        this.props.selectedOptions.numSeats === undefined
 
-      ) {
-        submitButtonElement =
-        <div className={styles.ToolTip}>
-        <input type="submit" value="Next" disabled={true} title="Please select options or correct errors before proceeding!!" />
-        </div>
 
-        errorElement = <Error error="Please select interior options!!" />
-      }
+
       let radioElement =
       <span>
         <select defaultValue={this.props.selectedOptions.hasRadio!==undefined?this.props.selectedOptions.hasRadio:""} onChange={setProductOption.bind(null, 'hasRadio')}>
@@ -72,11 +52,12 @@ class OrderStep3 extends Component {
         </select>
       </span>
       if(category==='sportsCar') {
-        i = 2
+        i = a = 2
+
       } else if(category==='limousine') {
-        i = 8
+        i = a = 8
       } else if(category==='fireEngine') {
-        i = 2
+        i = a = 2
         radioOptions = []
         radioElement =
         <span>
@@ -92,8 +73,17 @@ class OrderStep3 extends Component {
       if(selectedOptions.hasCupholders==="true"){
         numCupHoldersElement =
         <div>
-        {options.numCupholders.name}:
-        <input onChange={setProductOption.bind(null, 'numCupholders')}/>
+        <select defaultValue={this.props.selectedOptions.numCupholders!==undefined?this.props.selectedOptions.numCupholders:""} onChange={setProductOption.bind(null, 'numCupholders')} required>
+          <option value="">{options.numCupholders.name}</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
         </div>
       }
 
@@ -101,8 +91,15 @@ class OrderStep3 extends Component {
       if(selectedOptions.hasCigaretteLighters==="true"){
         numCigaretteLightersElement =
         <div>
-        {options.numCigaretteLighters.name}:
-        <input onChange={setProductOption.bind(null, 'numCigaretteLighters')}/>
+        <select defaultValue={this.props.selectedOptions.numCigaretteLighters!==undefined?this.props.selectedOptions.numCigaretteLighters:""} onChange={setProductOption.bind(null, 'numCigaretteLighters')} required>
+          <option value="">{options.numCigaretteLighters.name}</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
         </div>
       }
 
@@ -111,7 +108,7 @@ class OrderStep3 extends Component {
         radioTypeElement =
         <div>
 
-        <select defaultValue={this.props.selectedOptions.radioType!==undefined?this.props.selectedOptions.radioType:""} onChange={setProductOption.bind(null, 'radioType')}>
+        <select defaultValue={this.props.selectedOptions.radioType!==undefined?this.props.selectedOptions.radioType:""} onChange={setProductOption.bind(null, 'radioType')} required>
         <option value="">{options.radioType.name}</option>
         {radioOptions.map(radioOption => (
         <option key={radioOption} value={radioOption}>
@@ -125,7 +122,7 @@ class OrderStep3 extends Component {
       const seatOptions = []
 
 
-      for (let a=1; a <= i; a++) { seatOptions.push(a) }
+      for (let z=a; z <= i; z++) { seatOptions.push(z) }
 
       return this.state.submittedSuccessfully
           ? (<Redirect to="/order/4"/>)
@@ -136,12 +133,12 @@ class OrderStep3 extends Component {
                <OrderTabs cur={3} selectedOptions={selectedOptions} product={product}
                   productImg={selectedProductImg} error={error}/>
                <form onSubmit={this.handleSubmit.bind(this)}>
-               {errorElement}
+
 
                <div className={styles.orderStep3Options}>
                   <div>
 
-                     <select defaultValue={this.props.selectedOptions.interiorFabricColor!==undefined?this.props.selectedOptions.interiorFabricColor:""} onChange={setProductOption.bind(null, 'interiorFabricColor')}>
+                     <select defaultValue={this.props.selectedOptions.interiorFabricColor!==undefined?this.props.selectedOptions.interiorFabricColor:""} onChange={setProductOption.bind(null, 'interiorFabricColor')} required>
                      <option value="">{options.interiorFabricColor.name}</option>
                      <option value="Tan">Tan</option>
                      <option value="Gray">Gray</option>
@@ -153,7 +150,7 @@ class OrderStep3 extends Component {
                   </div>
                   <div>
 
-                     <select defaultValue={this.props.selectedOptions.numSeats!==undefined?this.props.selectedOptions.numSeats:""} onChange={setProductOption.bind(null, 'numSeats')}>
+                     <select defaultValue={this.props.selectedOptions.numSeats!==undefined?this.props.selectedOptions.numSeats:""} onChange={setProductOption.bind(null, 'numSeats')} required>
                      <option value="" >{options.numSeats.name}</option>
                      {seatOptions.map(option => (
                      <option key={option} value={option}>
@@ -164,7 +161,7 @@ class OrderStep3 extends Component {
                   </div>
                   <div>
 
-                     <select defaultValue={this.props.selectedOptions.dashboardColor!==undefined?this.props.selectedOptions.dashboardColor:""} onChange={setProductOption.bind(null, 'dashboardColor')}>
+                     <select defaultValue={this.props.selectedOptions.dashboardColor!==undefined?this.props.selectedOptions.dashboardColor:""} onChange={setProductOption.bind(null, 'dashboardColor')} required>
                      <option value="">{options.dashboardColor.name}</option>
                      <option value="Tan">Tan</option>
                      <option value="Gray">Gray</option>
@@ -176,7 +173,7 @@ class OrderStep3 extends Component {
                   </div>
                   <div>
                      <span> Select {options.dashboardLightsColor.name} </span>
-                     <input value={this.props.selectedOptions.dashboardLightsColor!==undefined?this.props.selectedOptions.dashboardLightsColor:""} type="color" onChange={setProductOption.bind(null, 'dashboardLightsColor')}/>
+                     <input value={this.props.selectedOptions.dashboardLightsColor!==undefined?this.props.selectedOptions.dashboardLightsColor:this.props.selectedOptions.dashboardLightsColor="#0000FF"} type="color" onChange={setProductOption.bind(null, 'dashboardLightsColor')} required/>
                   </div>
                   <div>
 
@@ -221,7 +218,7 @@ class OrderStep3 extends Component {
                   </div>
                   <div>
                      <span>Select {options.floormatsColor.name} </span>
-                     <input type="color" value={this.props.selectedOptions.floormatsColor!==undefined?this.props.selectedOptions.floormatsColor:""} onChange={setProductOption.bind(null, 'floormatsColor')}/>
+                     <input type="color" value={this.props.selectedOptions.floormatsColor!==undefined?this.props.selectedOptions.floormatsColor:this.props.selectedOptions.floormatsColor="#000000"} onChange={setProductOption.bind(null, 'floormatsColor')} required/>
                   </div>
                   </div>
                   <div className={styles.orderFooter}>
@@ -229,7 +226,7 @@ class OrderStep3 extends Component {
                           <input type="button" value="Previous"/>
                       </Link>
                       <div>
-                      {submitButtonElement}
+                      <input type="submit" value="Next" />
                       </div>
                   </div>
                </form>
