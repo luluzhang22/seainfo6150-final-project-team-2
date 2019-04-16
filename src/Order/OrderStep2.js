@@ -38,9 +38,9 @@ class OrderStep2 extends Component {
           <form onSubmit={this.handleSubmit.bind(this)}>
           <div className={styles.orderStep2Options}>
             <div>
-              <select id="exhaust-select" defaultValue={selectedOptions.numExhausts?selectedOptions.numExhausts:""} onChange={setProductOption.bind(null, 'numExhausts')}>
+              <select id="exhaust-select" defaultValue={selectedOptions.numExhausts?selectedOptions.numExhausts:""} onChange={setProductOption.bind(null, 'numExhausts')} required>
                 {/*{options.numExhausts.name}:*/}
-                <option value="1">{options.numExhausts.name}</option>
+                <option value="">{options.numExhausts.name}</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -50,7 +50,7 @@ class OrderStep2 extends Component {
 
             <div hidden={product && Object.keys(options.color.requirements).includes(product.categoryId)}>
               <span>Select Your Car Color</span>
-              <input type="color" defaultValue={selectedOptions.color?selectedOptions.color:""} onChange={setProductOption.bind(null, 'color')} required/>
+              <input type="color" defaultValue={selectedOptions.color?selectedOptions.color:""} onChange={setProductOption.bind(null, 'color')}/>
             </div>
 
             <div hidden={product && Object.keys(options.hasTintedWindows.requirements).includes(product.categoryId)}>
