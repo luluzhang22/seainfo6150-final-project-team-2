@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
-    padding: 0 2rem;
+    padding: 0 2rem 1rem 2rem;
     text-align: center;
 }
 .viewedPro{
@@ -22,12 +22,21 @@
 .viewedPro img{
     width: 50%;
 }
-.viewedPro button{
+.viewedPro a{
+    text-decoration: none;
+}
+.viewedBut{
     margin-top: 1rem;
+}
+.viewedPro span{
     background: #242323;
     padding: 6px 18px;
     color: white;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
 }
+
 @media (min-width: 650px) {
     .viewedProducts {
         grid-template-columns: 1fr 1fr 1fr 1fr;

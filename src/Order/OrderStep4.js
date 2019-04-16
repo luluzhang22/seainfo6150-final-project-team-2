@@ -182,7 +182,7 @@ class OrderStep4 extends Component {
 
                     <div className={styles.orderFooter}>
                         <Link to='/order/3'>
-                          <input type="button" value="Previous"/>
+                            <span>Previous</span>
                         </Link>
                         <div>
                           <input type="submit" value="Next" />

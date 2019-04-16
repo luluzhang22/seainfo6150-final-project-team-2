@@ -31,9 +31,11 @@ class Home extends React.Component {
                         <div className={styles.adEmphasize}>
                             NOW
                         </div>
+                        <div className={styles.adButton}>
                         <Link to='/products/'>
-                            <button className={styles.adButton}>Shop Now</button>
+                            Shop Now
                         </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -46,9 +48,11 @@ class Home extends React.Component {
                         <div className={styles.adEmphasize}>
                             JEEP
                         </div>
+                        <div className={styles.adButton}>
                         <Link to='/products/jeep/1c2d9303a50f'>
-                            <button className={styles.adButton}>Shop Now</button>
+                            Shop Now
                         </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -61,9 +65,11 @@ class Home extends React.Component {
                         <div className={styles.adEmphasize}>
                             Contact Us
                         </div>
+                        <div className={styles.adButton}>
                         <Link to='/contact/'>
-                            <button className={styles.adButton}>Contact</button>
+                            Contact
                         </Link>
+                        </div>
                     </div>
                 </div>
 

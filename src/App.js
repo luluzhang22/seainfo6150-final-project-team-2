@@ -19,7 +19,6 @@ import About from './About/About';
 import Contact from './Contact/Contact';
 import AllProducts from './AllProducts/AllProducts';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
-import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
 import ViewedProducts from './ViewedProducts/ViewedProducts';
 import OrderStep1 from './Order/OrderStep1';

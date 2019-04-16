@@ -1,11 +1,11 @@
 /*order tabs*/
 .orderTabs{
-    margin-bottom: 2rem;
+    margin-bottom: 13px;
     min-width: 500px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     font-size: 2rem;
-    height: 4rem;
+    /*height: 4rem;*/
     line-height: 4rem;
     text-align: center;
     background: #FFFFFF;
@@ -13,7 +13,6 @@
 .orderTab{
     padding:15px;
     border-bottom: 1px solid #e0e0e0;
-    /* border-bottom: 0.5px solid #242323; */
 }
 .activedTab{
     background: #FAFAFA;
@@ -34,7 +33,7 @@
     font-weight: bold;
 }
 .proImg {
-    margin: 5% auto;
+    margin: 0 auto;
     height: 25rem;
     position: relative;
     overflow: hidden;
@@ -62,7 +61,10 @@
     flex-flow: row;
     justify-content: space-between;
 }
-.orderFooter input{
+.orderFooter a{
+    text-decoration: none;
+}
+.orderFooter input, .orderFooter span{
     font-size: 2rem;
     background-color: white;
     border: #3c41e8;
@@ -123,16 +125,12 @@
 }
 
 .orderStep2Options div{
-    margin-left:auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: 10px;
     background-color: black;
     color: white;
     height: 30px;
     width: 80%;
     padding: 10px;
-    margin: auto;
 }
 
 

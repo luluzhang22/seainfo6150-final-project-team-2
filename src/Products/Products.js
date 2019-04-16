@@ -25,7 +25,9 @@ const Products = ({ categories, products }) => {
               &#10095;{product.title}
           </div>
           {price}
-              <button>View Detail</button>
+          <div className={styles.ProductButton}>
+            <span>View Detail</span>
+          </div>
           </Link>
       </li>
     );

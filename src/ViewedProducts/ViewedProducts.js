@@ -18,9 +18,11 @@ const ViewedProducts = ({ categories, products }) => {
               <div >
                   &#10095;{product.title}
               </div>
-              <Link to={`/products/${category.id}/${product.id}`}>
-                  <button>View Detail</button>
-              </Link>
+              <div className={styles.viewedBut}>
+                <Link to={`/products/${category.id}/${product.id}`}>
+                  <span>View Detail</span>
+                </Link>
+              </div>
           </div>
       );
   });

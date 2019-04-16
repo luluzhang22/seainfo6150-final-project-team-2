@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Redirect, Link } from "react-router-dom";
 import OrderTabs from "./OrderTabs";
 import styles from "./Order.module.css";
-import Error from '../Error/Error'
-
 
 class OrderStep3 extends Component {
   constructor(props) {
@@ -223,7 +221,7 @@ class OrderStep3 extends Component {
                   </div>
                   <div className={styles.orderFooter}>
                       <Link to='/order/2'>
-                          <input type="button" value="Previous"/>
+                          <span>Previous</span>
                       </Link>
                       <div>
                       <input type="submit" value="Next" />

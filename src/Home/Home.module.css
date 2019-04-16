@@ -74,10 +74,14 @@
 .adButton{
     margin-top: 1rem;
     font-size: 1.5rem;
+    cursor:pointer;
+}
+.adButton > a{
     padding: 1rem 2rem;
     border-radius: 1rem;
     background-color: #242323;
     color: white;
+    text-decoration: none;
 }
 
 @media (min-width: 700px) {
@@ -91,9 +95,11 @@
         font-size: 4rem;
     }
     .adButton{
+        margin-top: 2rem;
         font-size: 3rem;
+    }
+    .adButton > a{
         padding: 2rem 4rem;
-        cursor:pointer;
     }
 }
 @media (min-width: 1000px) {

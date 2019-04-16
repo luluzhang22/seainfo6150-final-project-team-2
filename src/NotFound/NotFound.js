@@ -1,7 +1,6 @@
 import React from 'react';
 import error from './error.png';
 import styles from './NotFound.module.css';
-import Home from '../Home/Home';
 import {Link} from 'react-router-dom';
 
 const NotFound = () => (
