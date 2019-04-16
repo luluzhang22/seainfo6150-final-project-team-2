@@ -133,7 +133,7 @@ class OrderStep4 extends Component {
                     <div className={styles.orderStep4Options}>
 
                       <div>
-                        <select id="hasGPS-select" defaultValue={selectedOptions.hasGPS!==undefined?selectedOptions.hasGPS:""} onChange={setProductOption.bind(null, 'hasGPS')} required>
+                        <select id="hasGPS-select" defaultValue={selectedOptions.hasGPS!==undefined?selectedOptions.hasGPS:""} onChange={setProductOption.bind(null, 'hasGPS')}>
                           <option value="">GPS?</option>
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
@@ -151,25 +151,25 @@ class OrderStep4 extends Component {
                       </div>
 
                       <div>
-                        <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')} defaultValue={selectedOptions.hasHoodOrnament!==undefined?selectedOptions.hasHoodOrnament:""} required>
-                          <option value="">Hood Ornament?($50 extra)</option>
-                          <option value="Yes">Yes</option>
+                        <select id="hasHoodOrnament-select" onChange={setProductOption.bind(null, 'hasHoodOrnament')} defaultValue={selectedOptions.hasHoodOrnament!==undefined?selectedOptions.hasHoodOrnament:""}>
+                          <option value="">Hood Ornament?</option>
+                          <option value="Yes">Yes &ensp;&ensp;&ensp;&ensp; +$50 extra</option>
                           <option value="No">No</option>
                         </select>
                       </div>
 
                       <div>
-                        <select id="hasTrunkMonkey-select" onChange={setProductOption.bind(null, 'hasTrunkMonkey')}>
-                          <option value="">{options.hasTrunkMonkey.name}($50 extra)</option>
-                          <option value="Yes">Yes</option>
+                        <select id="hasTrunkMonkey-select" onChange={setProductOption.bind(null, 'hasTrunkMonkey')} defaultValue={selectedOptions.hasTrunkMonkey!==undefined?selectedOptions.hasTrunkMonkey:""}>
+                          <option value="">{options.hasTrunkMonkey.name}</option>
+                          <option value="Yes">Yes &ensp;&ensp;&ensp;&ensp; +$50 extra</option>
                           <option value="No">No</option>
                         </select>
                       </div>
 
                       <div>
-                        <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')} defaultValue={selectedOptions.hasMonogrammedSteeringWheelCover!==undefined?selectedOptions.hasMonogrammedSteeringWheelCover:""} required>
-                          <option value="">Monogrammed Steering Wheel Cover?($50 extra)</option>
-                          <option value="Yes">Yes</option>
+                        <select id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'hasMonogrammedSteeringWheelCover')} defaultValue={selectedOptions.hasMonogrammedSteeringWheelCover!==undefined?selectedOptions.hasMonogrammedSteeringWheelCover:""}>
+                          <option value="">Monogrammed Steering Wheel Cover?</option>
+                          <option value="Yes">Yes &ensp;&ensp;&ensp;&ensp; +$50 extra</option>
                           <option value="no">No</option>
                         </select>
                       </div>
