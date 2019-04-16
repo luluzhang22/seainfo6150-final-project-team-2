@@ -141,7 +141,7 @@ class OrderStep4 extends Component {
                       </div>
 
                       <div>
-                        <select id="spareTire-select" defaultValue={selectedOptions.spareTire!==undefined?selectedOptions.hasTire:""} onChange={setProductOption.bind(null, 'spareTire')} required>
+                        <select id="spareTire-select" defaultValue={selectedOptions.spareTire!==undefined?selectedOptions.spareTire:""} onChange={setProductOption.bind(null, 'spareTire')} required>
                           <option value="">Spare Tire</option>
                           <option value="S">S</option>
                           <option value="M">M</option>
