@@ -20,7 +20,7 @@ const TotalPrice = ({ options, selectedOptions, product }) => {
     <div className={styles.totalPrice}>
       {
         [...selectedPremiumOptionsIds].map(id =>
-          <div><span>{options[id].name}</span> add 50</div>
+          <div key={id}><span>{options[id].name}</span> add 50</div>
         )
       }
       <div><span>Total:</span> ${ price + [...selectedPremiumOptionsIds].length*50 }</div>
