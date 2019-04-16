@@ -448,6 +448,7 @@ text-align: center;
 }
 .totalPrice{
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .totalPrice span{
     font-weight: bold;
@@ -467,6 +468,7 @@ text-align: center;
     border-right: 1px solid #dfdfdf;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .orderDetail > div:nth-child(even) {
     border-right: none;
@@ -474,7 +476,6 @@ text-align: center;
 }
 .orderDetail img{
     width: 90%;
-    max-height: 30rem;
 }
 .paymentList{
     padding-left: 0;
@@ -489,8 +490,12 @@ text-align: center;
     margin-bottom: 2rem;
 }
 @media only print {
-    .orderDetail > div{
+    .orderDetail {
         grid-template-columns: 1fr;
+    }
+    .orderDetail img{
+        width: 50%;
+        height: 25rem;
     }
 }
 

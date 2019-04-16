@@ -35,8 +35,43 @@ class Summary extends Component {
                     <div className={styles.orderDetail}>
                         <div>
                             <div>
-                            <img src={selectedProductImg} alt='productImg'/>
+                                <img src={selectedProductImg} alt='productImg'/>
                             </div>
+                        </div>
+                        <div>
+                            <div className={styles.summaryTitle}>
+                                Order Detail
+                            </div>
+                            <ul className={styles.optionsList}>
+                                <li><span>Title：</span>{product.title}</li>
+                                {
+                                    Object.keys(selectedOptions).map((option) => {
+                                        const originalOption = options[option];
+                                        const selectedValue = selectedOptions[option];
+
+                                        return (
+                                            <li key={option}>
+                                                <span>{originalOption.name}：</span>
+                                                {(originalOption.name.includes("Color")) ?
+                                                    <span
+                                                        style={{"background-color": selectedValue}}>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    :
+                                                    ""
+                                                }
+                                                {selectedValue}
+                                            </li>
+                                        );
+                                    })
+                                }
+                            </ul>
+                            <div className={styles.summaryTitle}>
+                                Price
+                            </div>
+                            <TotalPrice
+                                options={options}
+                                selectedOptions={selectedOptions}
+                                product={products[selectedProductId]}
+                            />
 
                             <div className={styles.summaryTitle}>
                                 Payment Information
@@ -78,41 +113,6 @@ class Summary extends Component {
                                         )
                                 }
                             </ul>
-                        </div>
-                        <div>
-                            <div className={styles.summaryTitle}>
-                                Order Detail
-                            </div>
-                            <ul className={styles.optionsList}>
-                                <li><span>Title：</span>{product.title}</li>
-                                {
-                                    Object.keys(selectedOptions).map((option) => {
-                                        const originalOption = options[option];
-                                        const selectedValue = selectedOptions[option];
-
-                                        return (
-                                            <li key={option}>
-                                                <span>{originalOption.name}：</span>
-                                                {(originalOption.name.includes("Color")) ?
-                                                    <span
-                                                        style={{"background-color": selectedValue}}>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                                    :
-                                                    ""
-                                                }
-                                                {selectedValue}
-                                            </li>
-                                        );
-                                    })
-                                }
-                            </ul>
-                            <div className={styles.summaryTitle}>
-                                Price
-                            </div>
-                            <TotalPrice
-                                options={options}
-                                selectedOptions={selectedOptions}
-                                product={products[selectedProductId]}
-                            />
                         </div>
                     </div>
 
