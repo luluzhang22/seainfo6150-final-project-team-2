@@ -9,6 +9,7 @@
     font-weight: bold;
 }
 .viewedProducts{
+    border: 1px solid #e0e0e0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
@@ -19,7 +20,7 @@
     font-size: 1.3rem;
 }
 .viewedPro img{
-    width: 90%;
+    width: 50%;
 }
 .viewedPro button{
     margin-top: 1rem;
