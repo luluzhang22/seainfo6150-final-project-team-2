@@ -174,14 +174,23 @@ class OrderStep5 extends Component {
                                 </div>
                                 <div>
                                     {/*This will iterate through all the selected options so you can see what the user chose. */}
-                                    <ul>
+                                    <ul className={styles.optionsList}>
                                         {
                                             Object.keys(selectedOptions).map((option) => {
                                                 const originalOption = options[option];
                                                 const selectedValue = selectedOptions[option];
 
                                                 return (
-                                                    <li key={option}>{originalOption.name}: {selectedValue}</li>
+                                                    <li key={option}>
+                                                        <span>{originalOption.name}</span>:
+                                                        {(originalOption.name.includes("Color")) ?
+                                                            <span
+                                                                style={{"background-color": selectedValue}}>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                            :
+                                                            ""
+                                                        }
+                                                        {selectedValue}
+                                                        </li>
                                                 );
                                             })
                                         }

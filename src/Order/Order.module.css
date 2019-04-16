@@ -329,7 +329,7 @@ text-align: center;
 .paymentTab > div {
     line-height: 3rem;
     align-items: center;
-    padding: 1rem 8rem 1rem 4rem;
+    padding: 1rem 4rem 1rem 4rem;
     border-right: 1px solid #dfdfdf;
 }
 .paymentTab > div:nth-child(even) {
@@ -351,6 +351,10 @@ text-align: center;
     margin-top: 0.5rem;
     margin-left: 2rem;
 }
+.buyerInfo p{
+    font-size: 2rem;
+    font-weight: bold;
+}
 .billAddressCheckbox{
     width: 70%;
     margin-left: 4rem;
@@ -363,16 +367,16 @@ text-align: center;
 }
 .vehicleTitleInSummary{
     text-align: center;
-    font-size: 4rem;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 .summary{
     display: flex;
     flex-direction: column;
 }
 .summaryImg{
-    margin: 0 auto;
-    height: 25rem;
+    margin: 0;
+    min-height: 20rem;
     position: relative;
     overflow: hidden;
 }
@@ -388,34 +392,56 @@ text-align: center;
     font-size: 2.5rem;
     border-bottom: 1px solid #242323;
 }
+.optionsList{
+    line-height: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0;
+    /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
+}
+.optionsList li{
+    flex-basis: 49%;
+}
+.optionsList span{
+    font-weight: bold;
+}
+.totalPrice{
+    margin-top: 1rem;
+}
+.totalPrice span{
+    font-weight: bold;
+}
 /*summary/thank-you page*/
 .summary header{
     text-align: center;
 }
-.orderDetail, .paymentDetail{
-    padding: 1rem 10rem 1rem 10rem;
-    line-height: 2rem;
-}
-.orderDetail li{
+.orderDetail{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
+    grid-template-columns: 5fr 6fr;
+    padding: 2rem;
 }
-.paymentDetail li{
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    text-align: left;
+.orderDetail > div {
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+    border-right: 1px solid #dfdfdf;
+    display: flex;
+    flex-direction: column;
 }
-.orderDetail li > div:nth-child(odd), .paymentDetail li > div:nth-child(odd) {
-    font-weight: bold;
-    text-align: right;
-}
-.orderDetail > div{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.orderDetail > div:nth-child(even) {
+    border-right: none;
+    padding: 1rem 4rem 1rem 4rem;
 }
 .orderDetail img{
-    width: 100%;
+    width: 90%;
+    max-height: 30rem;
+}
+.paymentList{
+    padding-left: 0;
+}
+.paymentList span{
+    font-weight: bold;
 }
 .summaryBut{
     display: flex;

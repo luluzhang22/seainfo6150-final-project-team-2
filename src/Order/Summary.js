@@ -33,60 +33,89 @@ class Summary extends Component {
                         </h2>
                     </header>
                     <div className={styles.orderDetail}>
-                        <h3>
-                            Order Detail
-                        </h3>
                         <div>
                             <div>
-                                <img src={selectedProductImg} alt='productImg'/>
+                            <img src={selectedProductImg} alt='productImg'/>
                             </div>
-                            <div>
-                                <ul>
-                                    <li><div>Title：</div> <div>{product.title}</div></li>
-                                    {
-                                        Object.keys(selectedOptions).map((option) => {
-                                            const originalOption = options[option];
-                                            const selectedValue = selectedOptions[option];
 
-                                            return (
-                                                <li key={option}><div>{originalOption.name}：</div><div>{selectedValue}</div></li>
-                                            );
-                                        })
-                                    }
-                                    <li>
-                                        <TotalPrice
-                                            options={options}
-                                            selectedOptions={selectedOptions}
-                                            product={products[selectedProductId]}
-                                        />
-                                    </li>
-                                </ul>
+                            <div className={styles.summaryTitle}>
+                                Payment Information
                             </div>
+                            {/* This will iterate through all the user info so you can see what the user entered. */}
+                            <ul className={styles.paymentList}>
+                                <li>
+                                    <span>Full Name：</span>{userInfo["Full Name"]}
+                                </li>
+                                <li>
+                                    <span>Shipment Address：</span>
+                                    {userInfo["Shipment.Street"]}, {userInfo["Shipment.City"]}, {userInfo["Shipment.State"]}, {userInfo["Shipment.Zip Code"]}
+                                </li>
+                                <li>
+                                    <span>Phone Number：</span>
+                                    {userInfo["Phone Number"]}
+                                </li>
+                                <li>
+                                    <span>Cell Number：</span>
+                                    {userInfo["Cell Number"]}
+                                </li>
+                                <li>
+                                    <span>Birthday：</span>
+                                    {userInfo["Birthday"]}
+                                </li>
+                                {
+                                    userInfo["Billing.Street"]
+                                        ? (
+                                            <li>
+                                                <span>Shipment Address：</span>
+                                                {userInfo["Billing.Street"]}, {userInfo["Billing.City"]}, {userInfo["Billing.State"]}, {userInfo["Billing.Zip Code"]}
+                                            </li>
+                                        )
+                                        : (
+                                            <li>
+                                                <span>Shipment Address：</span>
+                                                {userInfo["Shipment.Street"]}, {userInfo["Shipment.City"]}, {userInfo["Shipment.State"]}, {userInfo["Shipment.Zip Code"]}
+                                            </li>
+                                        )
+                                }
+                            </ul>
+                        </div>
+                        <div>
+                            <div className={styles.summaryTitle}>
+                                Order Detail
+                            </div>
+                            <ul className={styles.optionsList}>
+                                <li><span>Title：</span>{product.title}</li>
+                                {
+                                    Object.keys(selectedOptions).map((option) => {
+                                        const originalOption = options[option];
+                                        const selectedValue = selectedOptions[option];
+
+                                        return (
+                                            <li key={option}>
+                                                <span>{originalOption.name}：</span>
+                                                {(originalOption.name.includes("Color")) ?
+                                                    <span
+                                                        style={{"background-color": selectedValue}}>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                    :
+                                                    ""
+                                                }
+                                                {selectedValue}
+                                            </li>
+                                        );
+                                    })
+                                }
+                            </ul>
+                            <div className={styles.summaryTitle}>
+                                Price
+                            </div>
+                            <TotalPrice
+                                options={options}
+                                selectedOptions={selectedOptions}
+                                product={products[selectedProductId]}
+                            />
                         </div>
                     </div>
-                    <div className={styles.paymentDetail}>
-                        <h3>
-                            Payment Information
-                        </h3>
-                        {/* This will iterate through all the user info so you can see what the user entered. */}
-                        <ul>
-                            <li><div>Full Name：</div> <div>{userInfo["Full Name"]}</div></li>
-                            <li><div>Shipment Address：</div> <div>{userInfo["Shipment.Street"]}, {userInfo["Shipment.City"]}, {userInfo["Shipment.State"]}, {userInfo["Shipment.Zip Code"]}</div></li>
-                            <li><div>Phone Number：</div><div> {userInfo["Phone Number"]}</div></li>
-                            <li><div>Cell Number：</div><div> {userInfo["Cell Number"]}</div></li>
-                            <li><div>Birthday：</div><div> {userInfo["Birthday"]}</div> </li>
-                            {
-                                userInfo["Billing.Street"]
-                                    ? (
-                                        <li><div>Shipment Address：</div><div>{userInfo["Billing.Street"]}, {userInfo["Billing.City"]}, {userInfo["Billing.State"]}, {userInfo["Billing.Zip Code"]}</div></li>
-                                    )
-                                    : (
-                                        <li><div>Shipment Address：</div><div>{userInfo["Shipment.Street"]}, {userInfo["Shipment.City"]}, {userInfo["Shipment.State"]}, {userInfo["Shipment.Zip Code"]}</div></li>
-                                    )
-                            }
-                        </ul>
 
-                    </div>
                     <div className={styles.summaryBut}>
                         <button onClick={() => this.printPage()}>Print</button>
                         <Link to={`/`}>
