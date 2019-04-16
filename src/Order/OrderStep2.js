@@ -50,13 +50,14 @@ class OrderStep2 extends Component {
               </select>
             </div>
 
-            <div>
+            <div hidden={product && Object.keys(options.color.requirements).includes(product.categoryId)}>
               <text>Select Your Car Color</text>
-              <input type="color" onChange={setProductOption.bind(null, 'color')} required/>
+              <input type="color" defaultValue={selectedOptions.color?selectedOptions.color:""} onChange={setProductOption.bind(null, 'color')} required/>
             </div>
 
             <div hidden={product && Object.keys(options.hasTintedWindows.requirements).includes(product.categoryId)}>
-              <select id="tintedWindows" onChange={setProductOption.bind(null, 'hasTintedWindows')}required>
+              <select id="hasTintedWindows" defaultValue={selectedOptions.hasTintedWindows?selectedOptions.hasTintedWindows:""} onChange={setProductOption.bind(null, 'hasTintedWindows')}required>
+                {options.hasTintedWindows.name}:
                 <option value="no">Tinted Windows</option>
                 <option value="no">No</option>
                 <option value="yes">Yes</option>
@@ -64,7 +65,8 @@ class OrderStep2 extends Component {
             </div>
 
             <div>
-              <select id="hubcapMaterials" onChange={setProductOption.bind(null, 'hubcapsMaterial')} required>
+              <select id="hubcapsMaterial" defaultValue={selectedOptions.hubcapsMaterial?selectedOptions.hubcapsMaterial:""} onChange={setProductOption.bind(null, 'hubcapsMaterial')} required>
+                {options.hubcapsMaterial.name}:
                 <option value="chrome">Hubcap Materials</option>
                 <option value="chrome">Chrome</option>
                 <option value="steel">Steel</option>
