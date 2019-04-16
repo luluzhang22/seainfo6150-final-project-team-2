@@ -92,12 +92,34 @@
     display: flex;
 }
 
-.orderStep2Options {
+@media (min-width: 240px) {
+  .orderStep2Options {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .orderStep2Options {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .orderStep2Options {
     margin-top: auto;
     margin-bottom: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     font-size: 1.4rem;
+  }
 }
 
 .orderStep2Options div{
@@ -145,6 +167,14 @@ text-align: center;
 
 
 /*add css for content in step4(Accessories tab)*/
+@media (min-width: 240px) {
+  .orderStep4Options {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (min-width: 480px) {
   .orderStep4Options {
     margin: auto;
