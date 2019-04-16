@@ -50,7 +50,7 @@ class OrderStep2 extends Component {
               </select>
             </div>
 
-            <div>
+            <div hidden={product && Object.keys(options.color.requirements).includes(product.categoryId)}>
               <text>Select Your Car Color</text>
               <input type="color" onChange={setProductOption.bind(null, 'color')} required/>
             </div>

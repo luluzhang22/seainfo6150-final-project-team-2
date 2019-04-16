@@ -85,4 +85,9 @@
 .contactInfo{
   margin-top:1em;
   text-align: center;
+  font-size:14px;
+  color: #665c5c;
+  margin-left: 10%;
+  margin-right: 10%;
+  /* text-indent: 2em; */
 }
