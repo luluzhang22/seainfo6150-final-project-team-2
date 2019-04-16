@@ -139,7 +139,7 @@ const normalizeBoolean = (value) => {
 const setColor = (color) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  if (Object.keys(options.color.requirements).includes(selectedProduct.type)) {
+  if (selectedProduct && Object.keys(options.color.requirements).includes(selectedProduct.type)) {
     color = options.color.requirements[selectedProduct.type];
   }
   dispatch(setOption({ id: 'color', value: color }));
@@ -150,7 +150,7 @@ const setNumSeats = (numSeats) => (dispatch, getState) => {
   const selectedProduct = products[selectedProductId];
   const maximumNumSeats = options.numSeats.requirements.maximumNum;
   const minimumNumSeats = options.numSeats.requirements.minimumNum;
-  if (Object.keys(options.numSeats.requirements).includes(selectedProduct.categoryId)) {
+  if (selectedProduct && Object.keys(options.numSeats.requirements).includes(selectedProduct.categoryId)) {
     numSeats = options.numSeats.requirements[selectedProduct.categoryId];
   }
   if (numSeats > maximumNumSeats) {
