@@ -116,7 +116,7 @@ class OrderStep4 extends Component {
       if(selectedOptions.hasMonogrammedSteeringWheelCover === 'Yes'){
         monogram = <div className={styles.finalContainer}>
           <div>{options.monogram.name}(Please enter three letters)</div>
-          <input id="hasMonogrammedSteeringWheelCover" onChange={setProductOption.bind(null, 'monogram')} defaultValue={selectedOptions.monogram!==undefined?selectedOptions.monogram:""}
+          <input onChange={setProductOption.bind(null, 'monogram')} defaultValue={selectedOptions.monogram!==undefined?selectedOptions.monogram:""}
           pattern='[A-z]{3}'/>
         </div>
       }else{

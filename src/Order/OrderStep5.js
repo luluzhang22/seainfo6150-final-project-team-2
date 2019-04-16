@@ -185,7 +185,7 @@ class OrderStep5 extends Component {
                                                         <span>{originalOption.name}</span>:
                                                         {(originalOption.name.includes("Color")) ?
                                                             <span
-                                                                style={{"background-color": selectedValue}}>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                                style={{"backgroundColor": selectedValue}}>&nbsp;&nbsp;&nbsp;&nbsp;</span>
                                                             :
                                                             ""
                                                         }

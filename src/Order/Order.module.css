@@ -486,6 +486,17 @@ text-align: center;
     flex-flow: row;
     justify-content: space-around;
     margin-bottom: 2rem;
+    align-items: center;
+}
+.summaryBut a{
+    text-decoration: none;
+}
+.summaryBut button, .summaryBut span{
+    font-size: 1.5rem;
+    background-color: #242323;
+    color: white;
+    border-radius: 0.7rem;
+    padding: 6px 18px;
 }
 @media only print {
     .orderDetail {
