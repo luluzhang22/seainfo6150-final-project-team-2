@@ -94,6 +94,13 @@
     display: flex;
 }
 
+.orderStep2Options span{
+  font-size: 14px;
+  padding-top: 5px;
+  display: inline-block;
+  text-align: center;
+}
+
 @media (min-width: 240px) {
   .orderStep2Options {
     margin-top: auto;
