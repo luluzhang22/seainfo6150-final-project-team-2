@@ -1,5 +1,6 @@
 .container{
     margin: 10px;
+    text-align: center;
     color:#242323;
 }
 .products_header {
@@ -19,6 +20,7 @@
     height: 400px;
     vertical-align: middle;
 }
+
 .img{
     position: absolute;
     top: 40%;
@@ -30,12 +32,11 @@
     transform: translate(-50%,-50%);
 }
 
-.button{
-    display: block;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
+.button{    
+    font-size: 2rem;
+    font-weight: bold;
     background-color: #242323;
     color: white;
-    text-decoration: none;
+    border-radius: 0.7rem;
+    padding: 6px 18px;
 }
