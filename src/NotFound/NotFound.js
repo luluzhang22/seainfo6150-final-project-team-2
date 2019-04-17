@@ -6,7 +6,9 @@ import {Link} from 'react-router-dom';
 const NotFound = () => (
 <div>
     <div className={styles.container}>
-        <h1 className={styles.products_header}>#404: These aren't the pages you're looking for.</h1>
+        <div>
+            <h1 className={styles.products_header}>#404: These aren't the pages you're looking for.</h1>
+        </div>
         <div className={styles.imageContainer}>
             <img className={styles.img} src={error} alt="404"/>
         </div>
