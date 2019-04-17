@@ -40,7 +40,7 @@ class Home extends React.Component {
                 </div>
 
                 <div className={this.state.activedSlide === 2 ? styles.active : styles.slide}>
-                    <img src="/assets/img/product/banner2.jpeg" alt='slide2'/>
+                    <img src="/assets/img/product/banner2.jpg" alt='slide2'/>
                     <div className={styles.advertisement + " " + styles.advertisement2}>
                         <div className={styles.adTitle}>
                             All you want is a
