@@ -54,7 +54,7 @@ class OrderStep2 extends Component {
             </div>
 
             <div hidden={product && Object.keys(options.hasTintedWindows.requirements).includes(product.categoryId)}>
-              <select id="hasTintedWindows" defaultValue={selectedOptions.hasTintedWindows?selectedOptions.hasTintedWindows:""} onChange={setProductOption.bind(null, 'hasTintedWindows')} required>
+              <select id="hasTintedWindows" defaultValue={selectedOptions.hasTintedWindows?selectedOptions.hasTintedWindows:""} onChange={setProductOption.bind(null, 'hasTintedWindows')}>
                 {/*{options.hasTintedWindows.name}:*/}
                 <option value="">{options.hasTintedWindows.name}</option>
                 <option value="no">No</option>

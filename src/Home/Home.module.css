@@ -14,8 +14,8 @@
     top: 50%;
     left: 50%;
     display: block;
-    max-width: 150%;
-    max-height: 150%;
+    max-width: 280%;
+    max-height: 280%;
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba(0,0,0,.3); 
+    background: rgba(0,0,0,.3);
 }
 .advertisement2{
     margin-left: 4rem;
@@ -97,6 +97,10 @@
 @media (min-width: 700px) {
     .advertisement{
         width: 35%;
+    }
+    .slideshow img{
+        max-width: 150%;
+        max-height: 150%;
     }
     .adTitle{
         font-size: 2rem;
