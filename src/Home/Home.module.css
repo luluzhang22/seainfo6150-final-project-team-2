@@ -33,7 +33,7 @@
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: black;
+    color: #FAFAFA;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: rgba(0,0,0,.3); 
 }
 .advertisement2{
     margin-left: 4rem;
@@ -67,9 +68,18 @@
 }
 .adTitle{
     font-size: 1.5rem;
+    /* color:#FAFAFA; */
+}
+.ad2Title{
+    font-size: 2rem;
+    color:#FAFAFA;
 }
 .adEmphasize{
     font-size: 2.2rem;
+}
+.ad2Emphasize{
+    font-size: 3.5rem;
+    color: #FAFAFA;
 }
 .adButton{
     margin-top: 1rem;
