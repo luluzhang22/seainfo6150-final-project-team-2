@@ -14,8 +14,11 @@ class OrderStep4 extends Component {
 
 
   handleSubmit(event) {
-     const requiredOptions = ['color', 'numSeats', 'interiorFabricColor', 'dashboardColor', 'dashboardLightsColor',
-         'hubcapsMaterial', 'numExhausts', 'spareTire', 'engine', 'floormatsColor'];
+     const requiredOptions = [{id: "color", name: " Color"}, {id: "numSeats", name: " Number of Seats"},
+          {id: "interiorFabricColor", name: " Interior Fabric Color"}, {id: "dashboardColor", name: " Dashboard Color"},
+          {id: "dashboardLightsColor", name: " Dashboard Lights Color"},
+          {id: "hubcapsMaterial", name: " Hubcaps Material"}, {id: "numExhausts", name: " Number of Exhausts"},
+          {id: "spareTire", name: " Spare Tire"}, {id: "engine", name: " Engine"}, {id: "floormatsColor", name: " Floormats Color"}];
      if (!this.props.selectedOptions) {
          alert('Please select value for following required options first: '
              + requiredOptions.toString());
@@ -24,8 +27,8 @@ class OrderStep4 extends Component {
      }
      let unselectedOptions = [];
      requiredOptions.forEach(element => {
-         if (!this.props.selectedOptions[element]) {
-             unselectedOptions.push(element);
+         if (!this.props.selectedOptions[element.id]) {
+             unselectedOptions.push(element.name);
          }
      });
      if (unselectedOptions.length > 0) {

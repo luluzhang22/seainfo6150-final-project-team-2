@@ -29,7 +29,6 @@ class OrderStep1 extends Component {
 
   render() {
     const {
-      options,
       selectedProductId,
       selectedOptions,
       setProductOption,

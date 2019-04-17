@@ -8,8 +8,11 @@ const OrderTabs = ({cur, selectedOptions, product, productImg, error}) => {
 
     const tabs = [{key: 1, value: "Car"}, {key: 2, value: "Exterior"}, {key: 3, value: "Interior"},
         {key: 4, value: "Accessories"}, {key: 5, value: "Payment"}];
-    const requiredOptions = ['color', 'numSeats', 'interiorFabricColor', 'dashboardColor', 'dashboardLightsColor',
-        'hubcapsMaterial', 'numExhausts', 'spareTire', 'engine', 'floormatsColor'];
+    const requiredOptions = [{id: "color", name: " Color"}, {id: "numSeats", name: " Number of Seats"},
+        {id: "interiorFabricColor", name: " Interior Fabric Color"}, {id: "dashboardColor", name: " Dashboard Color"},
+        {id: "dashboardLightsColor", name: " Dashboard Lights Color"},
+        {id: "hubcapsMaterial", name: " Hubcaps Material"}, {id: "numExhausts", name: " Number of Exhausts"},
+        {id: "spareTire", name: " Spare Tire"}, {id: "engine", name: " Engine"}, {id: "floormatsColor", name: " Floormats Color"}];
     return (
         <div>
             {(!product)
@@ -29,8 +32,8 @@ const OrderTabs = ({cur, selectedOptions, product, productImg, error}) => {
                                         }
                                         let unselectedOptions = [];
                                         requiredOptions.forEach(element => {
-                                            if (!selectedOptions[element]) {
-                                                unselectedOptions.push(element);
+                                            if (!selectedOptions[element.id]) {
+                                                unselectedOptions.push(element.name);
                                             }
                                         });
                                         if (unselectedOptions.length > 0) {
