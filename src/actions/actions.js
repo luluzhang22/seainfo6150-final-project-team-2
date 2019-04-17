@@ -139,8 +139,8 @@ const normalizeBoolean = (value) => {
 const setColor = (color) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  if (Object.keys(options.color.requirements).includes(selectedProduct.type)) {
-    color = options.color.requirements[selectedProduct.type];
+  if (selectedProduct && Object.keys(options.color.requirements).includes(selectedProduct.categoryId)) {
+    color = options.color.requirements[selectedProduct.categoryId];
   }
   dispatch(setOption({ id: 'color', value: color }));
 }
@@ -150,7 +150,7 @@ const setNumSeats = (numSeats) => (dispatch, getState) => {
   const selectedProduct = products[selectedProductId];
   const maximumNumSeats = options.numSeats.requirements.maximumNum;
   const minimumNumSeats = options.numSeats.requirements.minimumNum;
-  if (Object.keys(options.numSeats.requirements).includes(selectedProduct.categoryId)) {
+  if (selectedProduct && Object.keys(options.numSeats.requirements).includes(selectedProduct.categoryId)) {
     numSeats = options.numSeats.requirements[selectedProduct.categoryId];
   }
   if (numSeats > maximumNumSeats) {
@@ -205,10 +205,10 @@ const setNumExhausts = (numExhausts) => (dispatch, getState) => {
 const setHasTintedWindows = (hasTintedWindows) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasTintedWindows.requirements, selectedProduct.type);
+  const hasProductRequirement = selectedProduct ? has(options.hasTintedWindows.requirements, selectedProduct.categoryId) : false;
 
   if (hasProductRequirement) {
-    hasTintedWindows = get(options.hasTintedWindows.requirements, selectedProduct.type)
+    hasTintedWindows = get(options.hasTintedWindows.requirements, selectedProduct.categoryId)
 
     if (!hasTintedWindows) {
       dispatch(setError('The selected vehicle does not support tinted windows.'));
@@ -226,7 +226,7 @@ const setHasTintedWindows = (hasTintedWindows) => (dispatch, getState) => {
 const setHasRadio = (hasRadio) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasRadio.requirements, selectedProduct.categoryId);
+  const hasProductRequirement = selectedProduct ? has(options.hasRadio.requirements, selectedProduct.categoryId) : false;
   if (hasProductRequirement) {
     hasRadio = get(options.hasRadio.requirements, selectedProduct.categoryId);
     if (!hasRadio) {
@@ -281,7 +281,7 @@ const setNumCupholders = (numCupholders) => (dispatch, getState) => {
 const setHasCigaretteLighters = (hasCigaretteLighters) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasCigaretteLighters.requirements, selectedProduct.categoryId);
+  const hasProductRequirement = selectedProduct ? has(options.hasCigaretteLighters.requirements, selectedProduct.categoryId) : false;
 
   if (hasProductRequirement) {
     hasCigaretteLighters = get(options.hasCigaretteLighters.requirements, selectedProduct.categoryId)
@@ -332,7 +332,7 @@ const setEngine = (engine) => (dispatch, getState) => {
 const setHasAirConditioning = (hasAirConditioning) => (dispatch, getState) => {
   const { options, products, selectedProductId } = getState();
   const selectedProduct = products[selectedProductId];
-  const hasProductRequirement = has(options.hasAirConditioning.requirements, selectedProduct.categoryId);
+  const hasProductRequirement = selectedProduct ? has(options.hasAirConditioning.requirements, selectedProduct.categoryId) : false;
 
   if (hasProductRequirement) {
     hasAirConditioning = get(options.hasAirConditioning.requirements, selectedProduct.categoryId)
