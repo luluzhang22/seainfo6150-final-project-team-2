@@ -14,7 +14,7 @@ const NotFound = () => (
             <p className={styles.message}>These aren't the pages you're looking for. You can go about your business.
                 Move along... move along.</p>
             <Link to={'/'}>
-                <button className={styles.button}>Home</button>
+                <input type="button" value="Home" className={styles.button}></input>
             </Link>
         </div>
     </div>
