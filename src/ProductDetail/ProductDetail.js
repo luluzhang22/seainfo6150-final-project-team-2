@@ -49,13 +49,13 @@ class ProductDetail extends PureComponent {
         <div className={styles.imgTitle}>{product.title}</div>
         <div className={styles.innerContainer}>
             <ul>
-              <li className={styles.ID}>Category: {product.categoryId}</li>
-              <li className={styles.year}>Year: {product.year}</li>
-              <li className={styles.price}>Price: {price}</li>
-              <li className={styles.title}>Title: {product.title}</li>
-              <li className={styles.description}>Description: {product.description}</li>
+              <li className={styles.info}>Category: {product.categoryId}</li>
+              <li className={styles.info}>Year: {product.year}</li>
+              <li className={styles.info}>Price: {price}</li>
+              <li className={styles.info}>Title: {product.title}</li>
+              <li className={styles.info}>Description: {product.description}</li>
             </ul>
-            <div>{button}</div>
+            {button}
         </div>
       </div>
     );

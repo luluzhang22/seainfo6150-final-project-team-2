@@ -5,7 +5,7 @@
 
 .innerContainer{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -16,14 +16,17 @@
 .img{
   width: 40%;
   height: auto;
+  margin-bottom: 0;
 }
 
 .Button{
     min-width: 30rem;
 }
+
 .Button a{
     text-decoration: none;
 }
+
 .Button span{
     padding: 2rem 4rem;
     border-radius: 1rem;
@@ -31,6 +34,7 @@
     color: white;
     font-size: 2rem;
 }
+
 .strike_price {
   text-decoration: line-through;
   font-weight: bold;
@@ -50,32 +54,40 @@
 .imgTitle{
   text-align: center;
   font-size: 3.5rem;
+  margin-top: 0;
   /* width: 15%; */
 }
 
-.ID{
-  text-align: left;
-  font-size: 2rem;
+@media (min-width: 480px) {
+  .info{
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
 }
 
-.year{
-  text-align: left;
-  font-size: 2rem;
-}
+@media (min-width: 1024px) {
+  .info{
+    text-align: left;
+    font-size: 2rem;
+  }
 
-.price{
-  text-align: left;
-  font-size: 2rem;
-}
+  .Button{
+      min-width: 30%;
+  }
 
-.title{
-  text-align: left;
-  font-size: 2rem;
-}
+  .Button a{
+      text-decoration: none;
+  }
+  .Button span{
+      padding: 2rem 4rem;
+      border-radius: 1rem;
+      background-color: #242323;
+      color: white;
+      font-size: 2rem;
+  }
 
-.description{
-  text-align: left;
-  font-size: 2rem;
+
 }
 
 .sorryMessage{
